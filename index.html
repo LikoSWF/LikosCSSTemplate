@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#000">
+	
+	<title>Document</title>
+	
+	<link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+<!--Top navigation-->
+<nav>
+	<ul>
+		<li><a href="#">HOME</a></li>
+		<li>
+			<label for="theme">Theme:</label>
+			<select name="theme" id="theme" onchange="changeTheme(this)">
+				<option value="dark">Dark</option>
+				<option value="light">Light</option>
+				<option value="crazy">Crazy</option>
+			</select>
+		</li>
+	</ul>
+</nav>
+<main>
+	<article>
+		<h2>Happy new blog post!</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam necessitatibus qui, optio possimus? Atque fugiat obcaecati aut excepturi alias ab pariatur et minus sequi omnis. Iste dignissimos exercitationem earum veritatis, cumque autem nulla consequatur sed perferendis vitae, illo laborum dolorum reiciendis dicta eveniet facilis reprehenderit? Molestias vel, doloremque maxime in.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla eaque magnam temporibus soluta tempore a dicta cupiditate ex hic corrupti? Debitis, ad. Architecto inventore placeat cumque eius doloribus maiores sequi voluptatum aut dignissimos nisi distinctio hic quibusdam quas delectus iure corporis dolor unde nulla cupiditate, accusantium! Praesentium debitis molestias aliquid explicabo consequatur eaque nulla, rem rerum, possimus perspiciatis, temporibus culpa. Id laborum, quia repellendus blanditiis aspernatur consequatur est reiciendis voluptatum deleniti vel earum quasi voluptatem minus. Repudiandae, dolorem inventore! Eius.</p>
+	</article>
+	<article>
+		<h2>Happy new blog post!</h2>
+		<img src="img/iot_internet_of_things_by_jackie_niam_gettyimages-996958260_2400x1600-100788446-large.jpg" alt="">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae labore perferendis eos exercitationem nulla molestias similique, qui, quidem, officiis minus dicta nam. Tenetur voluptas officia minima, quo, porro perspiciatis, quia ad recusandae veritatis quae itaque accusamus, reprehenderit vero voluptatem consequuntur.</p>
+		<ul>
+			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, enim.</li>
+			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus tempore, nesciunt minima nihil corporis aut at vero soluta hic repudiandae.</li>
+			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non eos perspiciatis sequi, maxime voluptatum laborum!</li>
+			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+			<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore vel cumque molestias hic blanditiis quisquam veritatis, nisi reiciendis!</li>
+		</ul>
+	</article>
+	
+	</main>
+	<footer>COPYRIGHT &copy; 2019</footer>
+	
+	<script>
+		// theme selection
+		const theme = document.getElementById('theme');
+		const currentTheme = localStorage.getItem('theme');
+		
+		// set theme from last setion on startup
+		window.onload = function setTheme() {
+			for (var i = 0; i < theme.options.length; i++){
+				if (theme.options[i].value === currentTheme){
+					theme.selectedIndex = i;
+					changeTheme(theme);
+		}	}	}
+		
+		function changeTheme(e) {
+			var e = e.options[e.selectedIndex];
+			document.documentElement.setAttribute('data-theme', e.value);
+			localStorage.setItem('theme', e.value);
+		}
+		
+		
+		// RGB!!! RAINBOWS FOR DAYS!!!
+	function rgb(){
+		var animTime = 20;
+		var now = new Date().getTime();
+		var sync = now / 1000 % animTime;
+		var hue = (360 / animTime) * sync;
+		document.documentElement.style.setProperty('--rgb'   , 'hsl('+hue+',100%,50%');
+		document.documentElement.style.setProperty('--rgb-d' , 'hsl('+hue+',100%,25%');
+		document.documentElement.style.setProperty('--rgb-l' , 'hsl('+hue+',100%,75%');
+		requestAnimationFrame(rgb);
+	} requestAnimationFrame(rgb);
+		
+		
+		// Hide Navbar when scrolling down.
+	var prevScrollpos = window.pageYOffset;
+	var navBar = document.querySelector("nav");
+	window.onscroll = function() {
+  	var currentScrollPos = window.pageYOffset;
+  	if (prevScrollpos > currentScrollPos) {
+    	navBar.style.top = "0";
+  	} else {
+			navBar.style.top = "-3.6rem";
+  	} prevScrollpos = currentScrollPos;
+	}
+	
+	</script>
+</body>
+</html>
