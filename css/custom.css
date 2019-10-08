@@ -1,9 +1,9 @@
 :root {
-	--bg1: #303038; /*--bg1: #111;*/
-	--bg2: #18181c;
+	--bg1: #202030; /*--bg1: #111;*/
+	--bg2: #181820;
 	--fg1: #fff;
 	--fg2: #ccc;
-	--hl1: #444;
+	--hl1: #445;
 	--hl2: ;
 	--nav: #445;
 	--nav1:#fff;
@@ -34,11 +34,26 @@ html {
 	background: var(--bg1);
 	color: var(--fg1);
 	font: 1.25rem sans-serif;
+	box-sizing: border-box;
 }
 
-body {margin: 0;}
+body {
+	margin: 0;
+	display: grid;
+	grid-template-areas:
+		"header header"
+		"main 	side 	"
+		"footer footer";
+	grid-template-rows: 2.5rem auto auto;
+	grid-template-columns: minmax(20rem,max-content) minmax(15rem,1fr);
+	min-height: 100vh;
+}
 
 hr {border: none; border-top: solid 1px var(--hl1);}
+
+header {
+	grid-area: header;
+}
 
 nav {
 	font-weight: bold;
@@ -50,6 +65,7 @@ nav {
 	overflow-x: hidden;
 	box-shadow: 0 .5em .5em var(--shad, #0003);
 	transition: top 0.3s; 
+	height: 100%;
 }
 
 nav ul {
@@ -57,46 +73,70 @@ nav ul {
 	margin: 0;
 	padding: 0;
 	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+	height: 100%;
 }
 
 nav li {
-	/*height: 2.5rem;*/
-	display: inline-block;
-	padding: 1rem 0;
-	grid-auto-flow: row;
+	display: table;
+	height: 100%;
+/*	padding: 0.5rem 0;*/
 }
 
-nav a {
+nav li a, nav li span{
+	display: table-cell;
+	vertical-align: middle;
 	color: var(--nav1);
-	padding: 1rem;
 }
 
-article {
-	max-width: 1280px;
+section {
+	max-width: 1200px;
 	border: solid 1px var(--hl1);
 	background: var(--bg2);
 	box-shadow: .5rem .5rem 1rem var(--shad);
-	margin: .5rem auto;
+	margin: 0 0 .5rem 0;
 	padding: 0;
+}
+
+article {
+	grid-area: main;
+}
+
+aside {
+	grid-area: side;
 }
 
 h1,h2,h3,h4,h5,h6,footer,header,nav {
 	text-align: center;
 }
 
-h1,h2,h3,h4,h5,h6,p,ol,ul {
+h1,h2,h3,h4,h5,h6,p,pre,ol,ul {
 	margin-left: 1rem;
 	margin-right: 1rem;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th,tr,td{
+	border: solid 1px var(--hl1);
+	text-align: center;
+}
+
+tr:nth-child(odd){
+	background: var(--bg1);
 }
 
 img { width: 100%; object-fit:cover; }
 
 
 
-main {
-	padding: 1rem;
-	min-height: 100vh;
+main, aside{
+	padding: .5rem;
 }
+
+footer{grid-area: footer;}
 
 @media screen and (max-width: 768px){
 	html{ font-size: 1rem;}
@@ -105,5 +145,15 @@ main {
 @media screen and (max-width: 576px){
 	main {
 		padding: 1rem 0;
+	}
+	
+	body{
+		grid-template-areas: 
+			"header"
+			"main"
+			"side"
+			"footer";
+		grid-template-rows: 2.5rem;
+		grid-template-columns: 1fr;
 	}
 }
