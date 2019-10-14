@@ -39,24 +39,14 @@ html {
 
 body {
 	margin: 0;
-	display: grid;
-	grid-template-areas:
-		"header"
-		"main"
-		"footer";
-	grid-template-rows: 2.5rem auto auto;
+	
 /*	grid-template-columns: minmax(20rem,max-content) minmax(15rem,1fr);*/
 /*	grid-gap: 1rem;*/
 	min-height: 100vh;
 }
 
 main{
-	display: grid;
-	grid-template-areas: 
-		"articles aside";
-	grid-gap: 1rem;
 	padding: 1rem;
-	
 }
 
 hr {border: none; border-top: solid 1px var(--hl1);}
@@ -139,12 +129,6 @@ tr:nth-child(odd){
 }
 
 img { width: 100%; object-fit:cover; }
-
-
-
-main, aside{
-/*	padding: .5rem;*/
-}
 
 footer{grid-area: footer;}
 

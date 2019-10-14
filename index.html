@@ -1,169 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000" />
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#000">
+    <title>Template</title>
 
-	<title>Template</title>
+    <link rel="stylesheet" href="css/custom.css" />
+    <style>
+      body {
+        display: grid;
+        grid-template-areas:
+          "header"
+          "main"
+          "footer";
+        grid-template-rows: 2.5rem auto auto;
+      }
+    </style>
+  </head>
 
-	<link rel="stylesheet" href="css/custom.css">
+  <body>
+    <!--Top navigation-->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#footer">FOOTER</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li>
+            <span>
+              <label for="theme">Theme:</label>
+              <select name="theme" id="theme" onchange="changeTheme(this)">
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+                <option value="crazy">Crazy</option>
+              </select>
+            </span>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!--Main page-->
+    <main>
+      <article>
+        <section>
+          <h2>Lorem ipsum dolor sit amet.</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam
+            necessitatibus qui, optio possimus? Atque fugiat obcaecati aut
+            excepturi alias ab pariatur et minus sequi omnis. Iste dignissimos
+            exercitationem earum veritatis, cumque autem nulla consequatur sed
+            perferendis vitae, illo laborum dolorum reiciendis dicta eveniet
+            facilis reprehenderit? Molestias vel, doloremque maxime in.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
+            eaque magnam temporibus soluta tempore a dicta cupiditate ex hic
+            corrupti? Debitis, ad. Architecto inventore placeat cumque eius
+            doloribus maiores sequi voluptatum aut dignissimos nisi distinctio
+            hic quibusdam quas delectus iure corporis dolor unde nulla
+            cupiditate, accusantium! Praesentium debitis molestias aliquid
+            explicabo consequatur eaque nulla, rem rerum, possimus perspiciatis,
+            temporibus culpa. Id laborum, quia repellendus blanditiis aspernatur
+            consequatur est reiciendis voluptatum deleniti vel earum quasi
+            voluptatem minus. Repudiandae, dolorem inventore! Eius.
+          </p>
+        </section>
+        <section>
+          <h2>Lorem ipsum dolor.</h2>
+          <img
+            src="img/iot_internet_of_things_by_jackie_niam_gettyimages-996958260_2400x1600-100788446-large.jpg"
+            alt=""
+          />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
+            labore perferendis eos exercitationem nulla molestias similique,
+            qui, quidem, officiis minus dicta nam. Tenetur voluptas officia
+            minima, quo, porro perspiciatis, quia ad recusandae veritatis quae
+            itaque accusamus, reprehenderit vero voluptatem consequuntur.
+          </p>
+          <ul>
+            <li>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut,
+              enim.
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Repellendus tempore, nesciunt minima nihil corporis aut at vero
+              soluta hic repudiandae.
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non eos
+              perspiciatis sequi, maxime voluptatum laborum!
+            </li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+            <li>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore
+              vel cumque molestias hic blanditiis quisquam veritatis, nisi
+              reiciendis!
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Table Example</h2>
+          <table>
+            <caption>
+              The Statistics of Lorem ipsum
+            </caption>
+            <colgroup>
+              <col style="width: 15%;" />
+              <col style="width: 15%;" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>Stats</th>
+                <th>High</th>
+                <th>Medium</th>
+                <th>Low</th>
+              </tr>
+              <tr>
+                <td rowspan="4">1234</td>
+                <td colspan="2">content</td>
+                <td>content</td>
+              </tr>
+              <tr>
+                <td>content</td>
+                <td rowspan="2" colspan="2">
+                  2x2 content
+                  <img
+                    src="img/iot_internet_of_things_by_jackie_niam_gettyimages-996958260_2400x1600-100788446-large.jpg"
+                    alt=""
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>content</td>
+              </tr>
+              <tr>
+                <td>content</td>
+                <td>content</td>
+                <td>content</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </article>
 
-</head>
+      <aside>
+        <article>
+          <section>
+            <h2>Some Side Content</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptatum quaerat nemo laboriosam reprehenderit nam atque
+              laborum, omnis ea praesentium quibusdam. Velit provident
+              reiciendis commodi animi iure, maxime atque quas est nesciunt
+              ratione, mollitia culpa soluta porro nihil! Debitis, nemo a non
+              consequatur cupiditate. Aliquid minus possimus tempore repellendus
+              ex commodi!
+            </p>
+          </section>
+          <section>
+            <h2>ADSpace</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
+              maiores, ad officia. Distinctio ducimus nihil, obcaecati ullam
+              expedita itaque non harum maiores fuga assumenda nesciunt, quos
+              culpa quae, excepturi et!
+            </p>
+          </section>
+        </article>
+      </aside>
+    </main>
+    <!--Footer-->
+    <footer id="footer">
+      <span>
+        COPYRIGHT &copy; 2019
+      </span>
+    </footer>
 
-<body>
-	<!--Top navigation-->
-	<header>
-		<nav>
-			<ul>
-				<li><a href="#">HOME</a></li>
-				<li><a href="#footer">FOOTER</a></li>
-				<li><a href="gallery.html">External Page</a></li>
-				<li>
-					<span>
-						<label for="theme">Theme:</label>
-						<select name="theme" id="theme" onchange="changeTheme(this)">
-							<option value="dark">Dark</option>
-							<option value="light">Light</option>
-							<option value="crazy">Crazy</option>
-						</select>
-					</span>
-				</li>
-			</ul>
-		</nav>
-	</header>
-	<!--Main page-->
-	<main>
-		<article>
-			<section>
-				<h2>Lorem ipsum dolor sit amet.</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam necessitatibus qui, optio possimus? Atque fugiat obcaecati aut excepturi alias ab pariatur et minus sequi omnis. Iste dignissimos exercitationem earum veritatis, cumque autem nulla consequatur sed perferendis vitae, illo laborum dolorum reiciendis dicta eveniet facilis reprehenderit? Molestias vel, doloremque maxime in.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla eaque magnam temporibus soluta tempore a dicta cupiditate ex hic corrupti? Debitis, ad. Architecto inventore placeat cumque eius doloribus maiores sequi voluptatum aut dignissimos nisi distinctio hic quibusdam quas delectus iure corporis dolor unde nulla cupiditate, accusantium! Praesentium debitis molestias aliquid explicabo consequatur eaque nulla, rem rerum, possimus perspiciatis, temporibus culpa. Id laborum, quia repellendus blanditiis aspernatur consequatur est reiciendis voluptatum deleniti vel earum quasi voluptatem minus. Repudiandae, dolorem inventore! Eius.</p>
-			</section>
-			<section>
-				<h2>Lorem ipsum dolor.</h2>
-				<img src="img/iot_internet_of_things_by_jackie_niam_gettyimages-996958260_2400x1600-100788446-large.jpg" alt="">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae labore perferendis eos exercitationem nulla molestias similique, qui, quidem, officiis minus dicta nam. Tenetur voluptas officia minima, quo, porro perspiciatis, quia ad recusandae veritatis quae itaque accusamus, reprehenderit vero voluptatem consequuntur.</p>
-				<ul>
-					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, enim.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus tempore, nesciunt minima nihil corporis aut at vero soluta hic repudiandae.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non eos perspiciatis sequi, maxime voluptatum laborum!</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore vel cumque molestias hic blanditiis quisquam veritatis, nisi reiciendis!</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Table Example</h2>
-				<table>
-					<caption>The Statistics of Lorem ipsum</caption>
-					<colgroup>
-						<col style="width: 15%;">
-						<col style="width: 15%;">
-					</colgroup>
-					<tbody>
-						<tr>
-							<th>Stats</th>
-							<th>High</th>
-							<th>Medium</th>
-							<th>Low</th>
-						</tr>
-						<tr>
-							<td rowspan="4">1234</td>
-							<td colspan="2">content</td>
-							<td>content</td>
-						</tr>
-						<tr>
-							<td>content</td>
-							<td rowspan="2" colspan="2">2x2 content <img src="img/iot_internet_of_things_by_jackie_niam_gettyimages-996958260_2400x1600-100788446-large.jpg" alt=""></td>
-						</tr>
-						<tr>
-							<td>content</td>
-						</tr>
-						<tr>
-							<td>content</td>
-							<td>content</td>
-							<td>content</td>
-						</tr>
-					</tbody>
-				</table>
-			</section>
-		</article>
-
-
-
-		<aside>
-			<article>
-				<section>
-					<h2>Some Side Content</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quaerat nemo laboriosam reprehenderit nam atque laborum, omnis ea praesentium quibusdam. Velit provident reiciendis commodi animi iure, maxime atque quas est nesciunt ratione, mollitia culpa soluta porro nihil! Debitis, nemo a non consequatur cupiditate. Aliquid minus possimus tempore repellendus ex commodi!</p>
-				</section>
-				<section>
-					<h2>ADSpace</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti maiores, ad officia. Distinctio ducimus nihil, obcaecati ullam expedita itaque non harum maiores fuga assumenda nesciunt, quos culpa quae, excepturi et!</p>
-				</section>
-			</article>
-
-		</aside>
-	</main>
-	<!--Footer-->
-	<footer id="footer">
-		<span>
-			COPYRIGHT &copy; 2019
-		</span>
-	</footer>
-
-	<script src="js/scrip.js"></script>
-	<!--
-	<script>
-		// theme selection
-		var theme = document.getElementById('theme');
-		var currentTheme = localStorage.getItem('theme');
-
-		// set theme from last setion on startup
-		window.onload = function setTheme() {
-			for (var i = 0; i < theme.options.length; i++) {
-				if (theme.options[i].value === currentTheme) {
-					theme.selectedIndex = i;
-					changeTheme(theme);
-				}
-			}
-		}
-
-		function changeTheme(e) {
-			var e = e.options[e.selectedIndex];
-			document.documentElement.setAttribute('data-theme', e.value);
-			localStorage.setItem('theme', e.value);
-		}
-
-
-		// RGB!!! RAINBOWS FOR DAYS!!!
-
-		function rgb() {
-			var animTime = 20;
-			var now = new Date().getTime();
-			var sync = now / 1000 % animTime;
-			var hue = (360 / animTime) * sync;
-			document.documentElement.style.setProperty('--rgb', 'hsl(' + hue + ',100%,50%');
-			document.documentElement.style.setProperty('--rgb-d', 'hsl(' + hue + ',100%,25%');
-			document.documentElement.style.setProperty('--rgb-l', 'hsl(' + hue + ',100%,75%');
-			requestAnimationFrame(rgb);
-		}
-		requestAnimationFrame(rgb);
-
-
-		// Hide Navbar when scrolling down.
-		var prevScrollpos = window.pageYOffset;
-		var navBar = document.querySelector("nav");
-		window.onscroll = function() {
-			var currentScrollPos = window.pageYOffset;
-			if (prevScrollpos > currentScrollPos) {
-				navBar.style.top = "0";
-			} else {
-				navBar.style.top = "-3.6rem";
-			}
-			prevScrollpos = currentScrollPos;
-		}
-	</script>
--->
-</body></html>
+    <script src="js/scrip.js"></script>
+  </body>
+</html>
