@@ -29,7 +29,7 @@
             </a>
           </li>
         </template>
-        <li class="w3h2">
+        <!-- <li class="w3h2">
           <a href="https://picsum.photos/200/300">
             <span class="card"
               ><h4>Picture of the day</h4>
@@ -49,7 +49,7 @@
             src="https://images.unsplash.com/photo-1569404874008-8e7a6669f594?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
             alt=""
           />
-        </li>
+        </li> -->
       </ul>
     </main>
     <script>
@@ -61,35 +61,65 @@
       var gallery = document.getElementsByClassName("gallery")[0];
       var template = document.getElementsByTagName("template")[0];
 
+      // RANDOM IMAGE SIZE CLASS //
       function randomClass() {
         return "w" + rng(1, 3) + "h" + rng(1, 3);
       }
+
+      // RANDOM PICTURES //
       function randomPicsum() {
-        const picsum = "https://picsum.photos/";
-        var min = 360;
-        var max = 480;
+        var min = 480;
+        var max = 1920;
         var w = rng(min, max);
         var h = rng(min, max);
-        return picsum + w + "/" + h;
+        var ratio = w / h;
       }
-
+      function Picsum(width, height) {
+        const picsum = "https://unsplash.it/";
+        return picsum + width + "/" + height;
+      }
+      // RANDOM NUMBER GENERATOR //
       function rng(minSize, maxSize) {
         return Math.round(Math.random() * (maxSize - minSize)) + minSize;
       }
 
-      console.log(randomPicsum());
-
+      // ADD RANDOM IMAGES TO DOM //
       for (var i = 0; i < 30; i++) {
         var temp = template.content.cloneNode(true);
-        var pic = randomPicsum();
 
+        // Picture Settings
+        var min = 240;
+        var max = 720;
+        var w = rng(min, max);
+        var h = rng(min, max);
+        var ratio = w/h;
+        console.log("image"+i+" ratio: "+ratio);
         gallery.prepend(temp);
-        gallery.querySelector("img").setAttribute("src", pic);
-        gallery.querySelector("a").setAttribute("href", pic);
-        gallery.querySelector("li").setAttribute("class", randomClass());
+        gallery.querySelector("img").setAttribute("src", Picsum(w,h));
+        gallery.querySelector("img").setAttribute("alt", "Pic" + i);
+        gallery.querySelector("li").setAttribute("class", RatioClass(ratio));
+        gallery.querySelector("a").setAttribute("href", Picsum(w,h));
+        gallery.querySelector("a").setAttribute("target", "_blank");
+
+        // gallery.querySelector("li").setAttribute("class", randomClass());
         gallery.querySelector("h4").innerHTML = "Picture " + i;
-        console.log(gallery.querySelector("h4"));
       }
+
+      function RatioClass(ratio) {
+        if (ratio >= 2) {
+          return "w2h1";
+        }
+        if (ratio >= 1.5) {
+          return "w2h2";
+        }
+        if(ratio <= 0.67) {
+          return "w2h3";
+        }
+        if(ratio <= 0.5){
+          return "w1h2";
+        }
+        else return "w1h1";
+      };
     </script>
   </body>
 </html>

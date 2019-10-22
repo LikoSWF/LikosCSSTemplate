@@ -6,16 +6,43 @@
     <meta name="theme-color" content="#000" />
 
     <title>Template</title>
-
+    <link rel="icon" href="icon.svg" />
     <link rel="stylesheet" href="css/custom.css" />
     <style>
       body {
         display: grid;
         grid-template-areas:
-          "header"
-          "main"
-          "footer";
-        grid-template-rows: 2.5rem auto auto;
+          "header header header header"
+          ".      main   aside  .     "
+          ".      main   .      .     "
+          "footer footer footer footer";
+        grid-template-columns: 1fr minmax(auto, 48rem) minmax(auto, 16rem) 1fr;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      header {
+        display: sticky;
+        grid-area: header;
+      }
+      main {
+        grid-area: main;
+      }
+      aside {
+        grid-area: aside;
+      }
+      footer {
+        grid-column: 1/-1;
+      }
+
+      @media only screen and (max-width: 576px) {
+        body {
+          grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -25,9 +52,19 @@
     <header>
       <nav>
         <ul>
+          <li>
+            <a href="#">
+              <img width="32" height="32" src="icon.svg" alt="" />
+            </a>
+          </li>
           <li><a href="#">HOME</a></li>
           <li><a href="#footer">FOOTER</a></li>
           <li><a href="gallery.html">Gallery</a></li>
+          <li>
+            <form action="search">
+              <label><input type="search" placeholder="Search"/></label>
+            </form>
+          </li>
           <li>
             <span>
               <label for="theme">Theme:</label>
@@ -35,6 +72,8 @@
                 <option value="dark">Dark</option>
                 <option value="light">Light</option>
                 <option value="crazy">Crazy</option>
+                <option value="black">Black</option>
+                <option value="picture">Picture</option>
               </select>
             </span>
           </li>
@@ -69,10 +108,7 @@
         </section>
         <section>
           <h2>Lorem ipsum dolor.</h2>
-          <img
-            src="img/iot_internet_of_things_by_jackie_niam_gettyimages-996958260_2400x1600-100788446-large.jpg"
-            alt=""
-          />
+          <img src="https://unsplash.it/1200/480" alt="" />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
             labore perferendis eos exercitationem nulla molestias similique,
@@ -146,37 +182,35 @@
           </table>
         </section>
       </article>
-
-      <aside>
-        <article>
-          <section>
-            <h2>Some Side Content</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatum quaerat nemo laboriosam reprehenderit nam atque
-              laborum, omnis ea praesentium quibusdam. Velit provident
-              reiciendis commodi animi iure, maxime atque quas est nesciunt
-              ratione, mollitia culpa soluta porro nihil! Debitis, nemo a non
-              consequatur cupiditate. Aliquid minus possimus tempore repellendus
-              ex commodi!
-            </p>
-          </section>
-          <section>
-            <h2>ADSpace</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
-              maiores, ad officia. Distinctio ducimus nihil, obcaecati ullam
-              expedita itaque non harum maiores fuga assumenda nesciunt, quos
-              culpa quae, excepturi et!
-            </p>
-          </section>
-        </article>
-      </aside>
     </main>
+    <aside>
+      <article>
+        <section>
+          <h2>Some Side Content</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
+            quaerat nemo laboriosam reprehenderit nam atque laborum, omnis ea
+            praesentium quibusdam. Velit provident reiciendis commodi animi
+            iure, maxime atque quas est nesciunt ratione, mollitia culpa soluta
+            porro nihil! Debitis, nemo a non consequatur cupiditate. Aliquid
+            minus possimus tempore repellendus ex commodi!
+          </p>
+        </section>
+        <section>
+          <h2>ADSpace</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
+            maiores, ad officia. Distinctio ducimus nihil, obcaecati ullam
+            expedita itaque non harum maiores fuga assumenda nesciunt, quos
+            culpa quae, excepturi et!
+          </p>
+        </section>
+      </article>
+    </aside>
     <!--Footer-->
     <footer id="footer">
       <span>
-        COPYRIGHT &copy; 2019
+        Liko Shepwolfox &copy; 2019
       </span>
     </footer>
 

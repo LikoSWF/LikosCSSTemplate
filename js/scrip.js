@@ -41,8 +41,11 @@
 			var currentScrollPos = window.pageYOffset;
 			if (prevScrollpos > currentScrollPos) {
 				navBar.style.top = "0";
+				navBar.style.boxShadow = "0 .25rem .25rem var(--shad, #0003)";
+				
 			} else {
-				navBar.style.top = "-3.6rem";
+				navBar.style.top = "-" + document.querySelector("header").offsetHeight + "px"; // 2.5rem = header height
+				navBar.style.boxShadow = "none"; // no shadow
 			}
 			prevScrollpos = currentScrollPos;
 		}

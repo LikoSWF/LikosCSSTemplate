@@ -1,153 +1,166 @@
 :root {
-	--bg1: #202030; /*--bg1: #111;*/
-	--bg2: #181820;
-	--fg1: #fff;
-	--fg2: #ccc;
-	--hl1: #445;
-	--hl2: ;
-	--nav: #445;
-	--nav1:#fff;
-	--shad: #0003;
+  --bg1: #223; /*--bg1: #111;*/
+  --bg2: #0008;
+  --fg1: #fff;
+  --fg2: #ccc;
+  --hl1: #222232;
+  --hl2: ;
+  --nav: #334;
+  --nav1: #fff;
+  --shad: #0003;
 }
 
 [data-theme="light"] {
-    --bg1: #ddd;
-    --bg2: #fff;
-    --fg1: #000;
-    --fg2: #666;
-    --hl1: #eee;
-		--nav: #fff;
-		--nav1:#000;
+  --bg1: #ddd;
+  --bg2: #fff;
+  --fg1: #000;
+  --fg2: #666;
+  --hl1: #eee;
+  --nav: #fff;
+  --nav1: #000;
 }
 
 [data-theme="crazy"] {
-	--bg1: var(--rgb-d);
-	--bg2: #000a;
-	--fg1: var(--rgb-l);
-	--hl1: var(--rgb);
-	--nav: var(--rgb-l);
-	--nav1:var(--rgb-d);
+  --bg1: var(--rgb-d);
+  --bg2: #000c;
+  --fg1: var(--rgb-l);
+  --hl1: var(--rgb);
+  --nav: var(--rgb-l);
+  --nav1: var(--rgb-d);
 }
-
+[data-theme="black"] {
+  --bg1: #000;
+  --bg2: #0000;
+  --fg1: #ccd;
+  --hl1: #c40;
+  --nav: #c40;
+  --nav1: #fff;
+}
+[data-theme="picture"] {
+  --bg1: url("https://unsplash.it/1920/1080");
+  --bg2: #000c;
+  --fg1: #ccd;
+  --hl1: #c40;
+  --nav: #c40;
+  --nav1: #fff;
+}
 
 html {
-	background: var(--bg1);
-	color: var(--fg1);
-	font: 1.25rem sans-serif;
-	box-sizing: border-box;
+  background: var(--bg1);
+  color: var(--fg1);
+  font: 20px sans-serif;
+  box-sizing: border-box;
 }
-
 body {
-	margin: 0;
-	
-/*	grid-template-columns: minmax(20rem,max-content) minmax(15rem,1fr);*/
-/*	grid-gap: 1rem;*/
-	min-height: 100vh;
+  margin: 0;
+  min-height: 100vh;
 }
 
-main{
-	padding: 1rem;
+hr {
+  border: none;
+  border-top: solid 1px var(--hl1);
 }
-
-hr {border: none; border-top: solid 1px var(--hl1);}
+footer{
+	text-align: center;
+}
 
 header {
-	grid-area: header;
-}
-
-nav {
-	font-weight: bold;
-	background: var(--nav);
+  position: sticky;
+  top: 0;
+  left: 0;
+	right: 0;
+	display: flex;
+  z-index: 999;
+  background: var(--nav);
 	color: var(--nav1);
-	position: sticky;
-	top: 0;
-	z-index: 999;
-	overflow-x: hidden;
-	box-shadow: 0 .5em .5em var(--shad, #0003);
-	transition: top 0.3s; 
-	height: 100%;
+	font-weight: bold;
+  box-shadow: 0 0.25rem 0.25rem var(--shad, #0003);
+  transition: all 0.3s;
 }
-
+nav{
+	display: flex;
+	max-width: 80rem;
+	margin: 0 auto;
+}
 nav ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
-	height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+	flex-wrap: wrap;
 }
 
 nav li {
+  flex: 1;
 	display: table;
-	height: 100%;
-/*	padding: 0.5rem 0;*/
+  height: 2.5rem;
+  padding: 0 0.5rem;
 }
 
-nav li a, nav li span{
-	display: table-cell;
+nav li > * {
+  display: table-cell;
 	vertical-align: middle;
-	color: var(--nav1);
+	text-align: center;
+  color: var(--nav1);
+}
+nav a {
+  text-decoration: none;
 }
 
 section {
-	max-width: 1200px;
-	border: solid 1px var(--hl1);
-	background: var(--bg2);
-	box-shadow: .5rem .5rem 1rem var(--shad);
-	margin: 0 0 .5rem 0;
-	padding: 0;
+  max-width: 1200px;
+  border: solid 1px var(--hl1);
+  background: var(--bg2);
+  box-shadow: 0.5rem 0.5rem 1rem var(--shad, #0003);
+  margin: 0 0 0.5rem 0;
+  padding: 0 1rem;
 }
 
-article {
-	grid-area: articles;
+h1,
+h2,
+h3 {
+  text-align: center;
+  margin: 1em 0 0.625em 0;
+}
+h4,
+h5,
+h6 {
+  text-align: left;
+  margin: 1em 0 0.625em 0;
+}
+p {
+  margin: 0.625em 0;
 }
 
-aside {
-	grid-area: aside;
-}
-
-h1,h2,h3,h4,h5,h6,footer,header,nav {
-	text-align: center;
-}
-
-h1,h2,h3,h4,h5,h6,p,pre,ol,ul {
-	margin-left: 1rem;
-	margin-right: 1rem;
-}
 table {
-	border-collapse: collapse;
-	width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
 
-th,tr,td{
-	border: solid 1px var(--hl1);
-	text-align: center;
+th,
+tr,
+td {
+  border: solid 1px var(--hl1);
+  text-align: center;
 }
 
-tr:nth-child(odd){
-	background: var(--bg1);
+tr:nth-child(odd) {
+  background: var(--bg1);
 }
 
-img { width: 100%; object-fit:cover; }
-
-footer{grid-area: footer;}
-
-@media screen and (max-width: 768px){
-	html{ font-size: 1rem;}
+img {
+  width: 100%;
+  object-fit: cover;
 }
 
-@media screen and (max-width: 576px){
-	main {
-		padding: 1rem 0;
-	}
-	
-	body{
-		grid-template-areas: 
-			"header"
-			"main"
-			"side"
-			"footer";
-		grid-template-rows: 2.5rem;
-		grid-template-columns: 1fr;
-	}
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  main {
+    padding: 1rem 0;
+  }
 }
