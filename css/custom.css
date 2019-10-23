@@ -8,6 +8,8 @@
   --nav: #334;
   --nav1: #fff;
   --shad: #0003;
+
+  --max-w: 80rem;
 }
 
 [data-theme="light"] {
@@ -61,7 +63,9 @@ hr {
   border-top: solid 1px var(--hl1);
 }
 footer{
-	text-align: center;
+  text-align: center;
+  background: var(--nav);
+  padding: .25rem;
 }
 
 header {
@@ -78,42 +82,52 @@ header {
   transition: all 0.3s;
 }
 nav{
-	display: flex;
-	max-width: 80rem;
-	margin: 0 auto;
+	max-width: var(--max-w, 1200px);
+  margin: 0 auto;
 }
 nav ul {
   list-style: none;
+  width: 100%;
   margin: 0;
   padding: 0;
   display: flex;
-	flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 nav li {
   flex: 1;
-	display: table;
+  display: table;
   height: 2.5rem;
-  padding: 0 0.5rem;
+  align-content: stretch;
 }
 
 nav li > * {
   display: table-cell;
-	vertical-align: middle;
+  vertical-align: middle;
 	text-align: center;
   color: var(--nav1);
+  padding: 0 0.5rem;
 }
-nav a {
+nav a>* {
+  display: block;
+}
+nav a{
   text-decoration: none;
 }
 
 section {
-  max-width: 1200px;
+  max-width: var(--max-w, 1200px);
   border: solid 1px var(--hl1);
   background: var(--bg2);
   box-shadow: 0.5rem 0.5rem 1rem var(--shad, #0003);
-  margin: 0 0 0.5rem 0;
   padding: 0 1rem;
+}
+section + section{
+  margin: 0.5rem 0 0 0;
+}
+article{
+  max-width: var(--max-w, 1200px);
+  margin: 0 auto;
 }
 
 h1,
@@ -156,11 +170,5 @@ img {
 @media screen and (max-width: 1024px) {
   html {
     font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  main {
-    padding: 1rem 0;
   }
 }

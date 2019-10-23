@@ -14,14 +14,15 @@
         grid-template-areas:
           "header header header header"
           ".      main   aside  .     "
+          ".      main   top    .     "
           ".      main   .      .     "
-          "footer footer footer footer";
+          "footer footer footer footer"
+          ;
         grid-template-columns: 1fr minmax(auto, 48rem) minmax(auto, 16rem) 1fr;
         justify-content: center;
         gap: 0.5rem;
       }
       header {
-        display: sticky;
         grid-area: header;
       }
       main {
@@ -33,13 +34,22 @@
       footer {
         grid-column: 1/-1;
       }
+      #top{
+        grid-area: top;
+        position: sticky;
+        top: .5rem;
+        /* transform: translateY(-100%); */
+        text-align: center;
+        padding: .5rem;
+      }
 
-      @media only screen and (max-width: 576px) {
+      @media only screen and (max-width: 768px) {
         body {
           grid-template-areas:
             "header"
             "main"
             "aside"
+            "top"
             "footer";
           grid-template-columns: 1fr;
         }
@@ -54,10 +64,10 @@
         <ul>
           <li>
             <a href="#">
-              <img width="32" height="32" src="icon.svg" alt="" />
+              <img width="32" height="32" src="icon.svg" alt="Logo" style="height: 2.5rem;"/>
             </a>
           </li>
-          <li><a href="#">HOME</a></li>
+          <li><a href="blank.html">Blank</a></li>
           <li><a href="#footer">FOOTER</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li>
@@ -108,7 +118,7 @@
         </section>
         <section>
           <h2>Lorem ipsum dolor.</h2>
-          <img src="https://unsplash.it/1200/480" alt="" />
+          <img width="256" src="https://unsplash.it/1200/480" alt="" />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
             labore perferendis eos exercitationem nulla molestias similique,
@@ -165,6 +175,7 @@
                 <td rowspan="2" colspan="2">
                   2x2 content
                   <img
+                    width="256"
                     src="img/iot_internet_of_things_by_jackie_niam_gettyimages-996958260_2400x1600-100788446-large.jpg"
                     alt=""
                   />
@@ -207,6 +218,9 @@
         </section>
       </article>
     </aside>
+    <section id="top">
+      <a href="#">Back to Top</a>
+    </section>
     <!--Footer-->
     <footer id="footer">
       <span>
