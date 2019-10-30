@@ -4,47 +4,13 @@
   --fg1: #fff;
   --fg2: #ccc;
   --hl1: #222232;
-  --hl2: ;
+  --hl2: #000;
   --nav: #334;
   --nav1: #fff;
   --shad: #0003;
 
   --max-w: 80rem;
-}
-
-[data-theme="light"] {
-  --bg1: #ddd;
-  --bg2: #fff;
-  --fg1: #000;
-  --fg2: #666;
-  --hl1: #eee;
-  --nav: #fff;
-  --nav1: #000;
-}
-
-[data-theme="crazy"] {
-  --bg1: var(--rgb-d);
-  --bg2: #000c;
-  --fg1: var(--rgb-l);
-  --hl1: var(--rgb);
-  --nav: var(--rgb-l);
-  --nav1: var(--rgb-d);
-}
-[data-theme="black"] {
-  --bg1: #000;
-  --bg2: #0000;
-  --fg1: #ccd;
-  --hl1: #c40;
-  --nav: #c40;
-  --nav1: #fff;
-}
-[data-theme="picture"] {
-  --bg1: url("https://unsplash.it/1920/1080");
-  --bg2: #000c;
-  --fg1: #ccd;
-  --hl1: #c40;
-  --nav: #c40;
-  --nav1: #fff;
+  --filet: 1rem;
 }
 
 html {
@@ -55,79 +21,130 @@ html {
 }
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 hr {
   border: none;
   border-top: solid 1px var(--hl1);
+  width: 100%;
 }
-footer{
+footer {
   text-align: center;
   background: var(--nav);
-  padding: .25rem;
+  padding: 0.25rem;
 }
-
+/* ============================================================== */
+/* HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER */
+/* ============================================================== */
 header {
   position: sticky;
   top: 0;
   left: 0;
-	right: 0;
-	display: flex;
-  z-index: 999;
+  right: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 9;
   background: var(--nav);
-	color: var(--nav1);
-	font-weight: bold;
+  color: var(--nav1);
+  font-weight: bold;
   box-shadow: 0 0.25rem 0.25rem var(--shad, #0003);
-  transition: all 0.3s;
+  transition: top 0.3s;
 }
-nav{
-	max-width: var(--max-w, 1200px);
+header>*{
+  padding: 0 .5rem;
+}
+
+/* GENERAL NAV-LINK SETTINGS */
+nav {
+  max-width: var(--max-w, 1200px);
   margin: 0 auto;
 }
-nav ul {
+nav ul{
   list-style: none;
-  width: 100%;
   margin: 0;
   padding: 0;
+}
+
+nav li:hover, nav li:focus-within{
+  background: #fff4;
+}
+nav li > * {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  color: var(--nav1);
+  padding: 0 .5rem;
+}
+
+nav a {
+  text-decoration: none;
+  
+}
+nav a > * {
+  display: block;
+}
+
+/* BASE-LEVEL NAV-LINK SETTINGS */
+nav ul {
   display: flex;
   flex-wrap: wrap;
 }
 
 nav li {
-  flex: 1;
-  display: table;
+  display: table-column;
   height: 2.5rem;
-  align-content: stretch;
 }
 
-nav li > * {
-  display: table-cell;
-  vertical-align: middle;
-	text-align: center;
-  color: var(--nav1);
-  padding: 0 0.5rem;
+/* DROPDOWN NAV-LINK SETTINGS */
+nav li li {
+  display: table-row;
+  height: 2em;
 }
-nav a>* {
-  display: block;
+nav ul ul {
+  background: var(--nav);
+  display: table;
+  min-width: 5rem;
+  position: absolute;
+  padding: 0;
+  z-index: -9;
+  font-weight: normal;
+  font-size: .8rem;
+  transform-origin: top;
+  transform: rotateX(-90deg); 
+  transition: transform 0.2s;
 }
-nav a{
-  text-decoration: none;
+/* Transformation MAGIC! */
+nav li:hover > ul,
+nav li:focus-within > ul,
+nav ul ul:hover,
+nav ul ul:focus-within {
+  transform: rotateX(0deg);
+  z-index: 10;
 }
+/* HEADER END */
+/* ================================================================ */
+/* MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN */
+/* ================================================================ */
 
-section {
+article {
   max-width: var(--max-w, 1200px);
   border: solid 1px var(--hl1);
+  border-radius: var(--filet);
   background: var(--bg2);
-  box-shadow: 0.5rem 0.5rem 1rem var(--shad, #0003);
+  box-shadow: 0.5rem 0.5rem 1rem var(--shad);
   padding: 0 1rem;
 }
-section + section{
+article + article {
   margin: 0.5rem 0 0 0;
 }
-article{
+main, aside {
   max-width: var(--max-w, 1200px);
   margin: 0 auto;
+}
+aside{
+  font-size: .875rem;
 }
 
 h1,
@@ -145,6 +162,16 @@ h6 {
 p {
   margin: 0.625em 0;
 }
+a{
+  color: inherit;
+  text-decoration: none;
+}
+a:hover, a:focus{
+  color: var(--fg2);
+}
+
+
+
 
 table {
   border-collapse: collapse;
@@ -170,5 +197,16 @@ img {
 @media screen and (max-width: 1024px) {
   html {
     font-size: 16px;
+  }
+  
+}
+@media screen and (min-width: 768px){
+  .menu{
+    display: none;
+  }
+}
+@media screen and (max-width: 768px){
+  .menu~*{
+    display: none;
   }
 }

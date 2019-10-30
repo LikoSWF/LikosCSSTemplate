@@ -8,6 +8,7 @@
     <title>Template</title>
     <link rel="icon" href="icon.svg" />
     <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/themes.css">
     <style>
       body {
         display: grid;
@@ -16,12 +17,12 @@
           ".      main   aside  .     "
           ".      main   top    .     "
           ".      main   .      .     "
-          "footer footer footer footer"
-          ;
-        grid-template-columns: 1fr minmax(auto, 48rem) minmax(auto, 16rem) 1fr;
+          "footer footer footer footer";
+        grid-template-columns: 1fr minmax(auto, 48rem) minmax(auto, 12rem) 1fr;
         justify-content: center;
         gap: 0.5rem;
       }
+
       header {
         grid-area: header;
       }
@@ -32,15 +33,16 @@
         grid-area: aside;
       }
       footer {
-        grid-column: 1/-1;
+        grid-area: footer;
       }
-      #top{
+
+      #top {
         grid-area: top;
         position: sticky;
-        top: .5rem;
+        top: 0.5rem;
         /* transform: translateY(-100%); */
         text-align: center;
-        padding: .5rem;
+        padding: 0.5rem;
       }
 
       @media only screen and (max-width: 768px) {
@@ -60,35 +62,79 @@
   <body>
     <!--Top navigation-->
     <header>
+      <a href="#"
+        ><img
+          width="32"
+          height="32"
+          src="icon.svg"
+          alt="Logo"
+          style="height: 2rem; width: 2rem;"
+      /></a>
+      <a class="menu">
+        <svg width="36" height="36" viewbox="0 0 100 100">
+          <g stroke="var(--nav1)" stroke-width="10">
+            <path d="M12,28 H88" />
+            <path d="M12,50 H88" />
+            <path d="M12,72 H88" />
+          </g>
+          Menu
+        </svg>
+      </a>
       <nav>
         <ul>
           <li>
-            <a href="#">
-              <img width="32" height="32" src="icon.svg" alt="Logo" style="height: 2.5rem;"/>
-            </a>
+            <a href="blank.html">Blank</a>
+            <ul>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+            </ul>
           </li>
-          <li><a href="blank.html">Blank</a></li>
           <li><a href="#footer">FOOTER</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li>
-            <form action="search">
-              <label><input type="search" placeholder="Search"/></label>
-            </form>
-          </li>
-          <li>
-            <span>
-              <label for="theme">Theme:</label>
-              <select name="theme" id="theme" onchange="changeTheme(this)">
-                <option value="dark">Dark</option>
-                <option value="light">Light</option>
-                <option value="crazy">Crazy</option>
-                <option value="black">Black</option>
-                <option value="picture">Picture</option>
-              </select>
-            </span>
+            <a>DropDown</a>
+            <ul>
+              <li><a href="#">Item1</a></li><hr>
+              <li><a href="#">Item2</a>
+                <ul>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Item3 Is a very long item</a>
+                <ul>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <hr>
+                  <li><a href="#">5</a></li>
+                  <li><a href="#">Super Duper Long Long Item</a>
+                    <ul>
+                      <li><a href="#">The very last item</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>
+      <form action="search">
+        <label><input type="search" placeholder="Search"/></label>
+      </form>
+      <label
+        >Theme
+        <select name="theme" id="theme-select" onchange="changeTheme(this)">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="crazy">Crazy</option>
+          <option value="black">Black</option>
+          <option value="picture">Picture</option>
+        </select>
+      </label>
     </header>
     <!--Main page-->
     <main>
@@ -103,6 +149,7 @@
             perferendis vitae, illo laborum dolorum reiciendis dicta eveniet
             facilis reprehenderit? Molestias vel, doloremque maxime in.
           </p>
+          <hr />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla
             eaque magnam temporibus soluta tempore a dicta cupiditate ex hic
@@ -118,7 +165,7 @@
         </section>
         <section>
           <h2>Lorem ipsum dolor.</h2>
-          <img width="256" src="https://unsplash.it/1200/480" alt="" />
+          <img width="360" src="https://unsplash.it/1200/480" alt="" />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
             labore perferendis eos exercitationem nulla molestias similique,
@@ -175,7 +222,7 @@
                 <td rowspan="2" colspan="2">
                   2x2 content
                   <img
-                    width="256"
+                    width="360"
                     src="img/iot_internet_of_things_by_jackie_niam_gettyimages-996958260_2400x1600-100788446-large.jpg"
                     alt=""
                   />
@@ -196,31 +243,29 @@
     </main>
     <aside>
       <article>
-        <section>
-          <h2>Some Side Content</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
-            quaerat nemo laboriosam reprehenderit nam atque laborum, omnis ea
-            praesentium quibusdam. Velit provident reiciendis commodi animi
-            iure, maxime atque quas est nesciunt ratione, mollitia culpa soluta
-            porro nihil! Debitis, nemo a non consequatur cupiditate. Aliquid
-            minus possimus tempore repellendus ex commodi!
-          </p>
-        </section>
-        <section>
-          <h2>ADSpace</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
-            maiores, ad officia. Distinctio ducimus nihil, obcaecati ullam
-            expedita itaque non harum maiores fuga assumenda nesciunt, quos
-            culpa quae, excepturi et!
-          </p>
-        </section>
+        <h2>Side Content</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
+          quaerat nemo laboriosam reprehenderit nam atque laborum, omnis ea
+          praesentium quibusdam. Velit provident reiciendis commodi animi iure,
+          maxime atque quas est nesciunt ratione, mollitia culpa soluta porro
+          nihil! Debitis, nemo a non consequatur cupiditate. Aliquid minus
+          possimus tempore repellendus ex commodi!
+        </p>
+      </article>
+      <article>
+        <h2>ADSpace</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
+          maiores, ad officia. Distinctio ducimus nihil, obcaecati ullam
+          expedita itaque non harum maiores fuga assumenda nesciunt, quos culpa
+          quae, excepturi et!
+        </p>
       </article>
     </aside>
-    <section id="top">
+    <article id="top">
       <a href="#">Back to Top</a>
-    </section>
+    </article>
     <!--Footer-->
     <footer id="footer">
       <span>
