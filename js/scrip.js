@@ -1,5 +1,5 @@
 	// theme selection
-	
+	var rgbRun = false;
 
 	
 		// set theme from last setion on startup
@@ -8,11 +8,9 @@
 		function setTheme(){
 			var themeSelector = document.getElementById('theme-select');
 			var currentTheme = localStorage.getItem('theme');
-			console.log(themeSelector);
 			if(themeSelector === null){
 				document.documentElement.setAttribute('data-theme', currentTheme)
-			}
-			else{
+			} else {
 				for (var i = 0; i < themeSelector.options.length; i++) {
 					if (themeSelector.options[i].value === currentTheme) {
 						themeSelector.selectedIndex = i;
@@ -20,7 +18,6 @@
 					}
 				}
 			}
-			
 		}
 
 		function changeTheme(e) {
@@ -31,8 +28,15 @@
 
 
 		// RGB!!! RAINBOWS FOR DAYS!!!
-
+		function toggleRGB(bool){
+			if(bool) 
+		}
 		function rgb() {
+			if (localStorage.getItem('theme') === 'crazy'){
+				rgbRun = true;
+			} else {rgbRun = false;}
+			if (!rgbRun) return;
+			console.log("RGB!!!")
 			var animTime = 20;
 			var now = new Date().getTime();
 			var sync = now / 1000 % animTime;
@@ -42,21 +46,21 @@
 			document.documentElement.style.setProperty('--rgb-l', 'hsl(' + hue + ',100%,75%)');
 			requestAnimationFrame(rgb);
 		}
-		requestAnimationFrame(rgb);
+		// requestAnimationFrame(rgb);
 
 
 		// Hide Navbar when scrolling down.
 		var prevScrollpos = window.pageYOffset;
 		var navBar = document.querySelector("header");
-		var hover = false;
+		var navBarHover = false;
 		
 
 		window.onscroll = function() {	
 			var currentScrollPos = window.pageYOffset;
-			navBar.onmouseover = function(){hover = true}
-			navBar.onmouseleave = function(){hover = false}
-			console.log(hover);
-			if(prevScrollpos > currentScrollPos || hover || this.navBar.contains(document.activeElement)){
+			navBar.onmouseover = function(){navBarHover = true}
+			navBar.onmouseleave = function(){navBarHover = false}
+			console.log("Navbar Hover: "+navBarHover);
+			if(prevScrollpos > currentScrollPos || navBarHover || this.navBar.contains(document.activeElement)){
 				navBar.style.top = "0";
 				navBar.style.boxShadow = "0 .25rem .25rem var(--shad)";
 				// prevScrollpos = currentScrollPos;

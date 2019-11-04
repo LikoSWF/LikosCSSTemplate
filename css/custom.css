@@ -1,21 +1,25 @@
 :root {
-  --bg1: #223; /*--bg1: #111;*/
-  --bg2: #0008;
+  --bg1: #223;
+  --bg2: rgba(0,0,0,.5);
   --fg1: #fff;
   --fg2: #ccc;
-  --hl1: #222232;
-  --hl2: #000;
+  --tx1: #fff;
+  --tx2: #dde;
+  --eg1: #223;
+  --hl1: rgba(255,255,255,.2);
   --nav: #334;
   --nav1: #fff;
-  --shad: #0003;
+  --shad: rgba(0,0,0,.2);
 
   --max-w: 80rem;
   --filet: 1rem;
 }
 
 html {
+  background: #223;
   background: var(--bg1);
-  color: var(--fg1);
+  color: #fff;
+  color: var(--tx2);
   font: 20px sans-serif;
   box-sizing: border-box;
 }
@@ -24,14 +28,34 @@ body {
   min-height: 100%;
 }
 
+article {
+  max-width: var(--max-w, 1200px);
+  border: solid 1px var(--eg1);
+  border-radius: var(--filet);
+  background: var(--bg2);
+  box-shadow: 0.5rem 0.5rem 1rem var(--shad);
+  padding: 0 1rem;
+}
+article + article {
+  margin: 0.5rem 0 0 0;
+}
+main, aside {
+  max-width: var(--max-w, 1200px);
+  margin: 0 auto;
+}
+aside{
+  font-size: .875rem;
+}
+
 hr {
   border: none;
-  border-top: solid 1px var(--hl1);
+  border-top: solid 1px var(--eg1);
   width: 100%;
 }
 footer {
   text-align: center;
   background: var(--nav);
+  color: var(--nav1);
   padding: 0.25rem;
 }
 /* ============================================================== */
@@ -49,7 +73,7 @@ header {
   background: var(--nav);
   color: var(--nav1);
   font-weight: bold;
-  box-shadow: 0 0.25rem 0.25rem var(--shad, #0003);
+  box-shadow: 0 0.25rem 0.25rem var(--shad);
   transition: top 0.3s;
 }
 header>*{
@@ -67,9 +91,13 @@ nav ul{
   padding: 0;
 }
 
-nav li:hover, nav li:focus-within{
-  background: #fff4;
+nav li:hover{
+  background: var(--hl1);
 }
+nav li:focus-within{
+  background: var(--hl1);
+}
+
 nav li > * {
   display: table-cell;
   vertical-align: middle;
@@ -91,9 +119,8 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
 }
-
 nav li {
-  display: table-column;
+  display: table;
   height: 2.5rem;
 }
 
@@ -117,8 +144,11 @@ nav ul ul {
 }
 /* Transformation MAGIC! */
 nav li:hover > ul,
+nav ul ul:hover {
+  transform: rotateX(0deg);
+  z-index: 10;
+}
 nav li:focus-within > ul,
-nav ul ul:hover,
 nav ul ul:focus-within {
   transform: rotateX(0deg);
   z-index: 10;
@@ -128,38 +158,24 @@ nav ul ul:focus-within {
 /* MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN */
 /* ================================================================ */
 
-article {
-  max-width: var(--max-w, 1200px);
-  border: solid 1px var(--hl1);
-  border-radius: var(--filet);
-  background: var(--bg2);
-  box-shadow: 0.5rem 0.5rem 1rem var(--shad);
-  padding: 0 1rem;
-}
-article + article {
-  margin: 0.5rem 0 0 0;
-}
-main, aside {
-  max-width: var(--max-w, 1200px);
-  margin: 0 auto;
-}
-aside{
-  font-size: .875rem;
-}
+
 
 h1,
 h2,
 h3 {
+  color: var(--tx1);
   text-align: center;
   margin: 1em 0 0.625em 0;
 }
 h4,
 h5,
 h6 {
+  color: var(--tx1);
   text-align: left;
   margin: 1em 0 0.625em 0;
 }
 p {
+  color: var(--tx2);
   margin: 0.625em 0;
 }
 a{
@@ -181,7 +197,7 @@ table {
 th,
 tr,
 td {
-  border: solid 1px var(--hl1);
+  border: solid 1px var(--eg1);
   text-align: center;
 }
 

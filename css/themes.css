@@ -1,9 +1,11 @@
 [data-theme="light"] {
   --bg1: #ddd;
   --bg2: #fff;
-  --fg1: #000;
+  --fg1: #222;
   --fg2: #666;
-  --hl1: #eee;
+  --tx1: #222;
+  --tx2: #444;
+  --eg1: #ddd;
   --nav: #fff;
   --nav1: #000;
 }
@@ -11,8 +13,9 @@
 [data-theme="crazy"] {
   --bg1: #181820;
   --bg2: #000;
-  --fg1: #fff;
-  --hl1: var(--rgb-d);
+  --tx1: var(--rgb-l);
+  --tx2: #eee;
+  --eg1: var(--rgb-d);
   --nav: var(--rgb-l);
   --nav1: var(--rgb-d);
 }
@@ -20,7 +23,7 @@
   --bg1: #000;
   --bg2: #0000;
   --fg1: #ccd;
-  --hl1: #c40;
+  --eg1: #c40;
   --nav: #c40;
   --nav1: #fff;
 }
@@ -28,7 +31,7 @@
   --bg1: url("https://unsplash.it/1920/1080");
   --bg2: #000c;
   --fg1: #ccd;
-  --hl1: #c40;
+  --eg1: #c40;
   --nav: #c40;
   --nav1: #fff;
 }

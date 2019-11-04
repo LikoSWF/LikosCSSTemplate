@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">Main</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <section style="display: flex;">
+          <img
+            style="flex: 1;"
+            id="image"
+            src="https://unsplash.it/400/600"
+            alt=""
+          />
+          <canvas
+            style="flex: 1;"
+            id="canvas"
+            width="400"
+            height="600"
+            style="margin: 0 auto;"
+          >
+          </canvas>
+        </section>
+      </article>
+    </main>
+
+    <script>
+      window.onload = function() {
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+        var img = document.getElementById("image");
+				ctx.drawImage(img, 10, 10);
+				console.log("hello");
+      };
+    </script>
+    <script src="js/scrip.js"></script>
+  </body>
+</html>

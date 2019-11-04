@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="css/gallery.css" />
     <link rel="stylesheet" href="css/custom.css" />
     <link rel="stylesheet" href="css/themes.css" />
+    <style>
+      body{
+        display: grid;
+        grid-template-areas: 
+          "header header header"
+          ".      main   .     "
+          "footer footer footer";
+          grid-template-columns: 0 1fr 0;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      header{grid-area: header;}
+      main{grid-area: main;}
+      footer{grid-area: footer;}
+    </style>
   </head>
   <body>
     <header>
