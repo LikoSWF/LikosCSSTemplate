@@ -208,6 +208,7 @@ tr:nth-child(odd) {
 img {
   width: 100%;
   object-fit: cover;
+  display: block;
 }
 
 @media screen and (max-width: 1024px) {

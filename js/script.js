@@ -28,9 +28,6 @@
 
 
 		// RGB!!! RAINBOWS FOR DAYS!!!
-		function toggleRGB(bool){
-			if(bool) 
-		}
 		function rgb() {
 			if (localStorage.getItem('theme') === 'crazy'){
 				rgbRun = true;
