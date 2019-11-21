@@ -13,8 +13,7 @@ window.onresize = window.onload = img.onload = function changeCanvasSize() {
 function draw() {
   var imgH = canvas.height;
   var imgW = canvas.width;
-  console.log(imgH);
-  console.log(imgW);
+  console.log("Width: "+imgW+"\tHeight: "+imgH+"\tRes: "+imgW*imgH);
   var ctx = c.getContext("2d");
   ctx.drawImage(img, 0, 0, imgW, imgH);
   var imgData = ctx.getImageData(0, 0, imgW, imgH);
@@ -22,9 +21,10 @@ function draw() {
   console.time("FilterTime");
   // bnw(data);
   // lite(data, imgW, imgH, 1);
-  bayer(data, imgW, imgH, 5,2);
+  bayer(data, imgW, imgH, 1,3);
   console.timeEnd("FilterTime");
   ctx.putImageData(imgData, 0, 0);
+  console.log("-----------------------------");
 }
 
 // ==================================== //
@@ -67,19 +67,16 @@ function bayer(img, w, h, s = 1, e = 1) {
   var step = 256 / s;
   var row = w << 2;
   var matrix = bayerMatrix(e);
-  console.log(matrix);
+  // console.log(matrix);
   var mW = matrix.length;
   for (var i = 0; i < img.length; i++) {
     if (img[i]%step > matrix[parseInt(i/row) % mW][parseInt((i/4))%mW]/s) {
-      // img[i] = 255;
       img[i] = parseInt(parseInt((img[i] + step) / step) * step);
     } else {
-      // img[i] = 0;
       img[i] = parseInt(parseInt(img[i] / step) * step);
     }
   }
 }
-
 
 function bayerMatrix(size) {
   console.time("Generating Matrix");
@@ -106,8 +103,9 @@ function bayerMatrix(size) {
     m = bigM;
   }
 
+  // Multiply matrix by weight and offset values by half
   weight = 256 / (w * w);
-  for (var y = 0; y < m.length; y++) {
+  for (var y = 0; y < w; y++) {
     for (var x = 0; x < w; x++) {
       m[y][x] = m[y][x] * weight - (weight >> 1);
     }

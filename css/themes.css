@@ -20,8 +20,8 @@
   --nav1: var(--rgb-d);
 }
 [data-theme="black"] {
-  --bg1: #000;
-  --bg2: #0000;
+  --bg1: #181820;
+  --bg2: #000;
   --fg1: #ccd;
   --eg1: #c40;
   --nav: #c40;

@@ -1,13 +1,13 @@
 :root {
-  --bg1: #223;
+  --bg1: #181820;
   --bg2: rgba(0,0,0,.5);
   --fg1: #fff;
   --fg2: #ccc;
   --tx1: #fff;
-  --tx2: #dde;
+  --tx2: #bbc;
   --eg1: #223;
-  --hl1: rgba(255,255,255,.2);
-  --nav: #334;
+  --hl1: rgba(255,255,255,.1);
+  --nav: #202030;
   --nav1: #fff;
   --shad: rgba(0,0,0,.2);
 
@@ -16,16 +16,27 @@
 }
 
 html {
-  background: #223;
+  background: #181820;
   background: var(--bg1);
   color: #fff;
   color: var(--tx2);
-  font: 20px sans-serif;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
+
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 240px;
   margin: 0;
-  min-height: 100%;
+}
+body>*{
+  flex: 1;
+}
+body header, body footer{
+  flex: none;
 }
 
 article {
@@ -34,7 +45,8 @@ article {
   border-radius: var(--filet);
   background: var(--bg2);
   box-shadow: 0.5rem 0.5rem 1rem var(--shad);
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
+  overflow: hidden;
 }
 article + article {
   margin: 0.5rem 0 0 0;
@@ -165,18 +177,18 @@ h2,
 h3 {
   color: var(--tx1);
   text-align: center;
-  margin: 1em 0 0.625em 0;
+  margin: 1em 1rem 0.5em 1rem;
 }
 h4,
 h5,
 h6 {
   color: var(--tx1);
   text-align: left;
-  margin: 1em 0 0.625em 0;
+  margin: 1em 1rem 0.5em 1rem;
 }
-p {
+p{
   color: var(--tx2);
-  margin: 0.625em 0;
+  margin: 0.5em 1rem;
 }
 a{
   color: inherit;
@@ -205,19 +217,75 @@ tr:nth-child(odd) {
   background: var(--bg1);
 }
 
-img {
+img,object {
   width: 100%;
   object-fit: cover;
   display: block;
 }
+/*============================================================*/
+/* SPEECH-BUBBLES SPEECH-BUBBLES SPEECH-BUBBLES SPEECH-BUBBLES*/
+/*============================================================*/
+dt,dd{
+  display: inline-block;
+}
+dt{
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+dl{
+  margin: .75rem 0;
+}
+.speech{
+  position: relative;
+  overflow: auto;
+  
+  max-height: 50vh;
+}
+.speech dd{
+  display: table;
+  background: var(--bg1);
+  border: solid 1px var(--eg1);
+  border-radius: var(--filet);
+  border-top-left-radius: 0;
+}
+.speech .self dd{
+  background: #223;
+  /* border-radius: 1rem 1rem 0 1rem; */
+}
+.speech dl > img{
+  width:3rem;
+  height:3rem;
+  margin: 0 .5rem;
+  border-radius: 50%;
+  float: left;
+}
+.speech dd img{
+  /* all: unset; */
+  width: 100%;
+  max-height: 100vh;
+  object-fit: contain;
+}
+.speech:last-child::after{
+  content:'';
+  display: block;
+  clear: both;
+}
+.speech time{
+  font-size: .75rem;
+  color: #fff4;
+}
+
+/*=======================================================*/
+/* MEDIA MEDIA MEDIA MEDIA MEDIA MEDIA MEDIA MEDIA MEDIA */
+/*=======================================================*/
 
 @media screen and (max-width: 1024px) {
   html {
     font-size: 16px;
   }
-  
 }
-@media screen and (min-width: 768px){
+/* @media screen and (min-width: 768px){
   .menu{
     display: none;
   }
@@ -226,4 +294,4 @@ img {
   .menu~*{
     display: none;
   }
-}
+} */
