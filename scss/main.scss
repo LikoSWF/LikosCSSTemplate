@@ -2,9 +2,9 @@
   /*  COLORS  */
   --bgc: #181820;
   --bgc-dark: #0c0c10;
+  --bdc: #202030;
   --txc: #ffffff;
   --txc-light: #ddd;
-  --bdc: #223;
 
   /*  SIZES  */
   --pad: 1rem;
@@ -31,14 +31,14 @@ body {
 
 //?=========================================================================?//
 /*  DIVISIONS AND CONTAINERS  */
-main {
+main, aside {
   margin: 0 auto;
-  padding: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 article {
   margin: 0 auto;
   background: var(--bgc-dark);
-  max-width: 600px;
+  max-width: 768px;
   border-radius: var(--rad);
   border: 1px solid var(--bdc);
   overflow: hidden;
@@ -76,13 +76,13 @@ h6{
 h1,
 h2 {
   // text-align: center;
-  margin: .875em var(--pad) .5em var(--pad);
+  margin: .75em var(--pad) .5rem var(--pad);
 }
 h3,
 h4,
 h5,
 h6 {
-  margin: .875em var(--pad) .5em var(--pad);
+  margin: .75em var(--pad) .5rem var(--pad);
 }
 
 p,
@@ -91,8 +91,23 @@ ol {
   margin: 0.5em var(--pad);
   color: var(--txc-light);
 }
+ul,ol{
+  padding-left: 1.75em;
+}
 
 //! TEMP
 p>*{
 color: #f80;
+}
+
+
+//? EXPERIMENTAL
+#cursor{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 0 0 4rem 2rem rgba(255,255,255,1);
+  z-index: 9999;
+  background-blend-mode: multiply;
 }

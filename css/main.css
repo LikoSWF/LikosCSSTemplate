@@ -2,9 +2,9 @@
   /*  COLORS  */
   --bgc: #181820;
   --bgc-dark: #0c0c10;
+  --bdc: #202030;
   --txc: #ffffff;
   --txc-light: #ddd;
-  --bdc: #223;
   /*  SIZES  */
   --pad: 1rem;
   --rad: 1rem;
@@ -30,7 +30,8 @@ body {
 
 /*  MAIN HEADER  */
 body > header {
-  background: #fff2;
+  position: relative;
+  background: var(--bdc);
 }
 
 body > header ul {
@@ -45,9 +46,12 @@ body > header li {
   height: inherit;
 }
 
-body > header a {
+body > header li > * {
   display: table-cell;
   vertical-align: middle;
+}
+
+body > header a {
   color: inherit;
   text-decoration: none;
 }
@@ -61,15 +65,15 @@ body > header a:hover, body > header a:focus {
 }
 
 /*  DIVISIONS AND CONTAINERS  */
-main {
+main, aside {
   margin: 0 auto;
-  padding: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 article {
   margin: 0 auto;
   background: var(--bgc-dark);
-  max-width: 600px;
+  max-width: 768px;
   border-radius: var(--rad);
   border: 1px solid var(--bdc);
   overflow: hidden;
@@ -114,14 +118,14 @@ h6 {
 
 h1,
 h2 {
-  margin: 0.875em var(--pad) 0.5em var(--pad);
+  margin: 0.75em var(--pad) 0.5rem var(--pad);
 }
 
 h3,
 h4,
 h5,
 h6 {
-  margin: 0.875em var(--pad) 0.5em var(--pad);
+  margin: 0.75em var(--pad) 0.5rem var(--pad);
 }
 
 p,
@@ -131,7 +135,22 @@ ol {
   color: var(--txc-light);
 }
 
+ul, ol {
+  padding-left: 1.75em;
+}
+
 p > * {
   color: #f80;
+}
+
+#cursor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  -webkit-box-shadow: 0 0 4rem 2rem white;
+          box-shadow: 0 0 4rem 2rem white;
+  z-index: 9999;
+  background-blend-mode: multiply;
 }
 /*# sourceMappingURL=main.css.map */

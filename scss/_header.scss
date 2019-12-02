@@ -1,6 +1,6 @@
 body > header {
-  
-  background: #fff2;
+  position: relative;
+  background: var(--bdc);
   ul {
     // height: 64px;
     list-style: none;
@@ -11,10 +11,13 @@ body > header {
     display: inline-table;
     padding: 0 10rem;
     height: inherit;
+
+    >*{
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
   a{
-    display: table-cell;
-    vertical-align: middle;
     color: inherit;
     text-decoration: none;
 

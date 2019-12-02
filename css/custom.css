@@ -227,6 +227,7 @@ img,object {
 /*============================================================*/
 dt,dd{
   display: inline-block;
+  overflow: hidden;
 }
 dt{
   /* white-space: nowrap; */
