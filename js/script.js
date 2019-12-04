@@ -68,6 +68,8 @@ function showHideNav() {
 }
 
 
+//? EXPERIMENTAL
+/*
 // MOUSE CURSOR
 var div = document.createElement("div");
 div.id = "cursor";
@@ -92,3 +94,32 @@ function followCursor(mouse){
 	// console.log("X: " + x);
 	// console.log("Y: " + y);
 }
+*/
+
+// CLOCK IN EMPTY <TIME></TIME>
+
+var allTime = document.getElementsByTagName("time");
+var clock = [];
+for (var i = 0; i < allTime.length; i++){
+	console.log(i);
+	if(allTime[i].innerHTML === ""){
+		clock.push(allTime[i]);
+	}
+}
+requestAnimationFrame(update);
+window.setInterval(()=>requestAnimationFrame(update),1000);
+
+function update(){
+	console.time("clock");
+	for (var i = 0; i < clock.length; i++){
+		var d = new Date();
+		clock[i].innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+	}
+	console.timeEnd("clock");
+
+	bar.value = d.getSeconds();
+}
+
+var bar = document.querySelector("progress");
+bar.max = 60;
+

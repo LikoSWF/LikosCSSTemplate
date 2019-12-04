@@ -38,7 +38,7 @@ main, aside {
 article {
   margin: 0 auto;
   background: var(--bgc-dark);
-  max-width: 768px;
+  max-width: 768px; //* 768px
   border-radius: var(--rad);
   border: 1px solid var(--bdc);
   overflow: hidden;
@@ -95,6 +95,40 @@ ul,ol{
   padding-left: 1.75em;
 }
 
+//?=========================================================================?//
+/* MISC */
+
+progress[value] {
+  // appearance: none;
+  width: 5em;
+  height: 1em;
+  border: none;
+  border-radius: .5rem;
+  overflow: hidden;
+  background: var(--bdc);
+  --grad: linear-gradient(45deg, #fff,#000) ;
+
+  &::-ms-fill{background: #f80;}
+  &::-moz-progress-bar{background: #f80;}
+  &::-webkit-progress-bar{background: var(--grad);}
+  &::-webkit-progress-value{background: #f80;}
+}
+
+@media (max-width:768px){
+  html{
+    font-size: 2.60417vw;
+  }
+}
+@media (max-width: 614px){
+  html{font-size: 16px}
+}
+@media (max-width: 320px){
+  html{font-size: 5vw}
+}
+@media (max-width: 240px){
+  html{font-size: 12px}
+}
+
 //! TEMP
 p>*{
 color: #f80;
@@ -110,4 +144,23 @@ color: #f80;
   box-shadow: 0 0 4rem 2rem rgba(255,255,255,1);
   z-index: 9999;
   background-blend-mode: multiply;
+}
+
+img{
+  // animation: kenburns 20s infinite alternate;
+}
+@keyframes kenburns{
+  0%{transform: scale(1)}
+  to{transform: scale(1.05)}
+}
+
+
+p{
+  perspective: 1in;
+  transform-style: preserve-3d;
+}
+.plane1{
+  position: relative;
+  top: 0;
+  transform: translateZ(.5in) scale(.5);
 }

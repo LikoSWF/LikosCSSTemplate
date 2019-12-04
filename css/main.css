@@ -32,9 +32,14 @@ body {
 body > header {
   position: relative;
   background: var(--bdc);
+  z-index: 9;
+  -webkit-box-shadow: 0 .5em .5rem #0004;
+          box-shadow: 0 .5em .5rem #0004;
+  font-weight: bold;
 }
 
 body > header ul {
+  height: 3rem;
   list-style: none;
   margin: 0;
   padding: 0 1rem;
@@ -42,7 +47,7 @@ body > header ul {
 
 body > header li {
   display: inline-table;
-  padding: 0 10rem;
+  padding: 0 .5rem;
   height: inherit;
 }
 
@@ -60,8 +65,8 @@ body > header a:visited {
   color: inherit;
 }
 
-body > header a:hover, body > header a:focus {
-  background: #fff2;
+body > header a:hover, body > header a:active, body > header a:focus {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /*  DIVISIONS AND CONTAINERS  */
@@ -139,6 +144,57 @@ ul, ol {
   padding-left: 1.75em;
 }
 
+/* MISC */
+progress[value] {
+  width: 5em;
+  height: 1em;
+  border: none;
+  border-radius: .5rem;
+  overflow: hidden;
+  background: var(--bdc);
+  --grad: linear-gradient(45deg, #fff,#000) ;
+}
+
+progress[value]::-ms-fill {
+  background: #f80;
+}
+
+progress[value]::-moz-progress-bar {
+  background: #f80;
+}
+
+progress[value]::-webkit-progress-bar {
+  background: var(--grad);
+}
+
+progress[value]::-webkit-progress-value {
+  background: #f80;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 2.60417vw;
+  }
+}
+
+@media (max-width: 614px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 240px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 p > * {
   color: #f80;
 }
@@ -152,5 +208,41 @@ p > * {
           box-shadow: 0 0 4rem 2rem white;
   z-index: 9999;
   background-blend-mode: multiply;
+}
+
+@-webkit-keyframes kenburns {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+@keyframes kenburns {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+}
+
+p {
+  -webkit-perspective: 1in;
+          perspective: 1in;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.plane1 {
+  position: relative;
+  top: 0;
+  -webkit-transform: translateZ(0.5in) scale(0.5);
+          transform: translateZ(0.5in) scale(0.5);
 }
 /*# sourceMappingURL=main.css.map */
