@@ -13,7 +13,7 @@ window.onresize = window.onload = img.onload = function changeCanvasSize() {
 function draw() {
   var imgH = canvas.height;
   var imgW = canvas.width;
-  console.log("Width: "+imgW+"\tHeight: "+imgH+"\tRes: "+imgW*imgH);
+  console.log("Width: "+imgW+"\t\tHeight: "+imgH+"\t\tRes: "+imgW*imgH);
   var ctx = c.getContext("2d");
   ctx.drawImage(img, 0, 0, imgW, imgH);
   var imgData = ctx.getImageData(0, 0, imgW, imgH);

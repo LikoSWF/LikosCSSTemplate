@@ -31,7 +31,8 @@ body {
 
 //?=========================================================================?//
 /*  DIVISIONS AND CONTAINERS  */
-main, aside {
+main,
+aside {
   margin: 0 auto;
   padding-bottom: 0.5rem;
 }
@@ -42,13 +43,18 @@ article {
   border-radius: var(--rad);
   border: 1px solid var(--bdc);
   overflow: hidden;
+
+  +article{
+    margin-top: .5rem;
+  }
 }
 
 hr {
   border: none;
   border-top: 1px solid var(--bdc);
 }
-img {
+img,
+svg {
   display: block;
   width: 100%;
   object-fit: cover;
@@ -58,31 +64,31 @@ img {
 h1 {
   font-size: 2rem;
 }
-h2{
+h2 {
   font-size: 1.75em;
 }
-h3{
+h3 {
   font-size: 1.5em;
 }
-h4{
+h4 {
   font-size: 1.25em;
 }
-h5{
+h5 {
   font-size: 1em;
 }
-h6{
-  font-size: .875em;
+h6 {
+  font-size: 0.875em;
 }
 h1,
 h2 {
   // text-align: center;
-  margin: .75em var(--pad) .5rem var(--pad);
+  margin: 0.75em var(--pad) 0.5rem var(--pad);
 }
 h3,
 h4,
 h5,
 h6 {
-  margin: .75em var(--pad) .5rem var(--pad);
+  margin: 0.75em var(--pad) 0.5rem var(--pad);
 }
 
 p,
@@ -91,7 +97,8 @@ ol {
   margin: 0.5em var(--pad);
   color: var(--txc-light);
 }
-ul,ol{
+ul,
+ol {
   padding-left: 1.75em;
 }
 
@@ -103,64 +110,76 @@ progress[value] {
   width: 5em;
   height: 1em;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   overflow: hidden;
   background: var(--bdc);
-  --grad: linear-gradient(45deg, #fff,#000) ;
+  --grad: linear-gradient(45deg, #fff, #000);
 
-  &::-ms-fill{background: #f80;}
-  &::-moz-progress-bar{background: #f80;}
-  &::-webkit-progress-bar{background: var(--grad);}
-  &::-webkit-progress-value{background: #f80;}
+  &::-ms-fill {
+    background: #f80;
+  }
+  &::-moz-progress-bar {
+    background: #f80;
+  }
+  &::-webkit-progress-bar {
+    background: var(--grad);
+  }
+  &::-webkit-progress-value {
+    background: #f80;
+  }
 }
 
-@media (max-width:768px){
-  html{
+@media (max-width: 768px) {
+  html {
     font-size: 2.60417vw;
   }
 }
-@media (max-width: 614px){
-  html{font-size: 16px}
+@media (max-width: 614px) {
+  html {
+    font-size: 16px;
+  }
 }
-@media (max-width: 320px){
-  html{font-size: 5vw}
+@media (max-width: 320px) {
+  html {
+    font-size: 5vw;
+  }
 }
-@media (max-width: 240px){
-  html{font-size: 12px}
+@media (max-width: 240px) {
+  html {
+    font-size: 12px;
+  }
 }
-
-//! TEMP
-p>*{
-color: #f80;
-}
-
 
 //? EXPERIMENTAL
-#cursor{
+#cursor {
   position: absolute;
   width: 1px;
   height: 1px;
   background: transparent;
-  box-shadow: 0 0 4rem 2rem rgba(255,255,255,1);
+  box-shadow: 0 0 4rem 2rem rgba(255, 255, 255, 1);
   z-index: 9999;
   background-blend-mode: multiply;
 }
 
-img{
+img {
   // animation: kenburns 20s infinite alternate;
 }
-@keyframes kenburns{
-  0%{transform: scale(1)}
-  to{transform: scale(1.05)}
+@keyframes kenburns {
+  0% {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
 }
 
-
-p{
+p {
   perspective: 1in;
   transform-style: preserve-3d;
 }
-.plane1{
+.plane1 {
   position: relative;
   top: 0;
-  transform: translateZ(.5in) scale(.5);
+  transform: translateZ(0.5in) scale(0.5);
+  filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25));
 }

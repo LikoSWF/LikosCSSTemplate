@@ -39,7 +39,11 @@ body > header {
 }
 
 body > header ul {
-  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0 1rem;
@@ -47,8 +51,7 @@ body > header ul {
 
 body > header li {
   display: inline-table;
-  padding: 0 .5rem;
-  height: inherit;
+  height: 100%;
 }
 
 body > header li > * {
@@ -57,6 +60,8 @@ body > header li > * {
 }
 
 body > header a {
+  border-radius: var(--rad);
+  padding: .5rem;
   color: inherit;
   text-decoration: none;
 }
@@ -70,7 +75,8 @@ body > header a:hover, body > header a:active, body > header a:focus {
 }
 
 /*  DIVISIONS AND CONTAINERS  */
-main, aside {
+main,
+aside {
   margin: 0 auto;
   padding-bottom: 0.5rem;
 }
@@ -84,12 +90,17 @@ article {
   overflow: hidden;
 }
 
+article + article {
+  margin-top: .5rem;
+}
+
 hr {
   border: none;
   border-top: 1px solid var(--bdc);
 }
 
-img {
+img,
+svg {
   display: block;
   width: 100%;
   -o-object-fit: cover;
@@ -118,7 +129,7 @@ h5 {
 }
 
 h6 {
-  font-size: .875em;
+  font-size: 0.875em;
 }
 
 h1,
@@ -140,7 +151,8 @@ ol {
   color: var(--txc-light);
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 1.75em;
 }
 
@@ -149,10 +161,10 @@ progress[value] {
   width: 5em;
   height: 1em;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   overflow: hidden;
   background: var(--bdc);
-  --grad: linear-gradient(45deg, #fff,#000) ;
+  --grad: linear-gradient(45deg, #fff, #000);
 }
 
 progress[value]::-ms-fill {
@@ -193,10 +205,6 @@ progress[value]::-webkit-progress-value {
   html {
     font-size: 12px;
   }
-}
-
-p > * {
-  color: #f80;
 }
 
 #cursor {
@@ -244,5 +252,7 @@ p {
   top: 0;
   -webkit-transform: translateZ(0.5in) scale(0.5);
           transform: translateZ(0.5in) scale(0.5);
+  -webkit-filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25));
 }
 /*# sourceMappingURL=main.css.map */

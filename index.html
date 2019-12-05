@@ -7,8 +7,8 @@
 
     <title>Template</title>
     <link rel="icon" href="icon.svg" />
-    <link rel="stylesheet" href="css/custom.css" />
-    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="/css/custom.css" />
+    <link rel="stylesheet" href="/css/themes.css" />
     <style>
       body {
         display: grid;
@@ -71,49 +71,53 @@
           style="height: 2rem; width: 2rem;"
       /></a>
       <a class="menu">
-        <svg width="36" height="36" viewbox="0 0 100 100">
-          <g stroke="var(--nav1)" stroke-width="10">
-            <path d="M12,28 H88" />
-            <path d="M12,50 H88" />
-            <path d="M12,72 H88" />
-          </g>
+        <svg width="36" height="36" viewbox="0 0 10 10">
           Menu
+          <g stroke="var(--nav1)" stroke-width="1">
+            <path d="M2,3 H8 M2,5 H8 M2,7 H8" />
+            <!-- for width="24" -->
+            <!-- <path d="M.5,2 H9 M.5,5 H9 M.5,8 H9" />  -->
+          </g>
         </svg>
       </a>
       <nav>
         <ul>
           <li>
-            <a href="blank.html">Blank</a>
+            <a href="/home">Home</a>
             <ul>
-              <li><a href="newIndex.html">newIndex</a></li>
-              <li><a href="#">2</a></li>
+              <li><a href="/speech">Speech bubbles</a></li>
+              <li><a href="/canvas">Canvas</a></li>
               <li><a href="#">3</a></li>
             </ul>
           </li>
           <li><a href="#footer">FOOTER</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="/gallery">Gallery</a></li>
           <li>
             <a>DropDown</a>
             <ul>
-              <li><a href="#">Item1</a></li><hr>
-              <li><a href="#">Item2</a>
+              <li><a href="#">Item1</a></li>
+              <hr />
+              <li>
+                <a href="#">Item2</a>
                 <ul>
                   <li><a href="#">1</a></li>
                   <li><a href="#">2</a></li>
                   <li><a href="#">3</a></li>
                 </ul>
               </li>
-              <li><a href="#">Item3 Is a very long item</a>
+              <li>
+                <a href="#">Item3 Is a very long item</a>
                 <ul>
                   <li><a href="#">1</a></li>
                   <li><a href="#">2</a></li>
                   <li><a href="#">3</a></li>
                   <li><a href="#">4</a></li>
-                  <hr>
+                  <hr />
                   <li><a href="#">5</a></li>
-                  <li><a href="#">Super Duper Long Long Item</a>
+                  <li>
+                    <a href="#">Super Duper Long Long Item</a>
                     <ul>
-                      <li><a href="canvas.html">Canvas</a></li>
+                      <li><a href="#">asdfg</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -278,6 +282,6 @@
       </span>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
