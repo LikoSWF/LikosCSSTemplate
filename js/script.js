@@ -33,7 +33,7 @@ function rgb() {
     return;
   }
   // console.log("RGB!!!");
-  var animTime = 20;
+  var animTime = 60;
   var now = new Date().getTime();
   var sync = (now / 1000) % animTime;
   var hue = (360 / animTime) * sync;

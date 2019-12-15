@@ -1,0 +1,36 @@
+[data-theme="light"] {
+    --bgc-1: #ddd; // Base Background
+    --bgc-2: #fff; // Front Background
+    --txc-1: #222; // Heading Text
+    --txc-2: #666; // Body Text
+    --tx1: #222;
+    --tx2: #444;
+    --bdc-1: #ccc; // Border Color
+    --nav: #fff;
+    --nav1: #000;
+  }
+  
+  [data-theme="crazy"] {
+    --bgc-1: #181820;
+    --bgc-2: #000;
+    --txc-1: var(--rgb-l);
+    --txc-2: #ccc;
+    --bdc-1: var(--rgb-d);
+    --acc-1: var(--rgb-l);
+  }
+  [data-theme="black"] {
+    --bgc-1: #000;
+    --bgc-2: #000;
+    --fg1: #ccd;
+    --eg1: #c40;
+    --nav: #c40;
+    --nav1: #fff;
+  }
+  [data-theme="picture"] {
+    --bg1: url("https://unsplash.it/1920/1080");
+    --bg2: #000c;
+    --fg1: #ccd;
+    --eg1: #c40;
+    --nav: #c40;
+    --nav1: #fff;
+  }

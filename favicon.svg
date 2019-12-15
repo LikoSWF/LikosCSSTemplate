@@ -1,0 +1,7 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="500" height="500">
+  <style>@keyframes spin{0%{transform:rotateY(0deg)}20%,to{transform:rotateY(360deg)}}@keyframes rotate{0%{transform:rotateZ(0deg)}to{transform:rotateZ(360deg)}}*{transform-origin:center}</style>
+  <g style="perspective:50cm;animation:rotate 60s infinite linear">
+    <circle r="400" cx="500" cy="500" fill="none" stroke="#fff" stroke-width="100" style="animation:spin 17s infinite linear"/>
+    <path d="M500,150 L800,675 L200,675 Z" fill="#fff" style="animation:spin 20s infinite linear"/>
+  </g> Logo
+</svg>

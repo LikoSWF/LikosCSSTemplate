@@ -3,7 +3,7 @@
        {
            "format": "expanded",
            "extensionName": ".css",
-           "savePath": "/css"
+           "savePath": "~/../css"
     //    },
     //    {
     //        "extensionName": ".min.css",
@@ -16,8 +16,9 @@
       ".vscode/**"
    ],
    "liveSassCompile.settings.generateMap": true,
-   "liveSassCompile.settings.autoprefix": [
-       "> 1%",
-       "last 2 versions"
-   ]
+   "liveSassCompile.settings.autoprefix": null
+//    [
+//        "> 5%",
+//        "last 2 versions"
+//    ]
 }

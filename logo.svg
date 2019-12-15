@@ -1,0 +1,9 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="-37 -43 74 74" width="64" height="64">
+<style>@keyframes spin{0% {} 20%, to {transform:rotateY(180deg)}}</style>
+<g style="animation: spin 10s infinite linear">
+<path stroke="#f80" stroke-width="3" fill="#fc0" transform="rotate(45 0 0)" d="
+M-6-6 h 28 a 30 30 0 0 1 18.386 6.787 l-11.316 11.316 a 12.2 12.2 0 0 0-16.97 16.97 l-11.316 11.316 a 30 30 0 0 1-6.787-18.386Z
+M 7-17 v-16 a 18 18 0 0 1 16 16Z
+M-7-33 h-16 a 18 18 0 0 0 16 16Z
+M-33-7 v-16 a 18 18 0 0 1 16 16Z
+M-17 7 h-16 a 18 18 0 0 0 16 16Z"/></g></svg>

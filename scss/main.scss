@@ -1,25 +1,31 @@
 :root {
   /*  COLORS  */
-  --bgc: #181820;
-  --bgc-dark: #0c0c10;
-  --bdc: #202030;
-  --txc: #ffffff;
-  --txc-light: #ddd;
+  --bg-1: #181820; // Background-1
+  --bg-2: #0c0c10; // Background-2
+  
+  --eg-1: #222233; // Border-1 EDGE color
+
+  --fg-1: #333344;
+
+  --tx-1: #ffffff; // Text-1 HEADING color
+  --tx-2: #cccccc; // Text-2 BODY color
+  --tx-3: #888888;
 
   /*  SIZES  */
-  --pad: 1rem;
-  --rad: 1rem;
+
+  --pad-md: 1rem;
+  --rad-md: .5rem;
 }
+@import "_themes";
 * {
   box-sizing: border-box;
 }
 html {
   background: #181820;
-  background: var(--bgc);
-  color: #ffffff;
-  color: var(--txc);
+  background: var(--bg-1);
+  color: var(--tx-2);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 24px;
 }
 body {
   margin: 0 auto;
@@ -38,10 +44,11 @@ aside {
 }
 article {
   margin: 0 auto;
-  background: var(--bgc-dark);
-  max-width: 768px; //* 768px
-  border-radius: var(--rad);
-  border: 1px solid var(--bdc);
+  background: var(--bg-2);
+  min-width: 240px;
+  max-width: 1280px; //* 768px
+  border-radius: var(--rad-md);
+  border: .0625rem solid var(--eg-1);
   overflow: hidden;
 
   +article{
@@ -51,7 +58,7 @@ article {
 
 hr {
   border: none;
-  border-top: 1px solid var(--bdc);
+  border-top: 1px solid var(--eg-1);
 }
 img,
 svg {
@@ -81,26 +88,30 @@ h6 {
 }
 h1,
 h2 {
-  // text-align: center;
-  margin: 0.75em var(--pad) 0.5rem var(--pad);
+  color: var(--txc-1);
+  margin: 0.5em var(--pad-md) 0.5rem var(--pad-md);
 }
 h3,
 h4,
 h5,
 h6 {
-  margin: 0.75em var(--pad) 0.5rem var(--pad);
+  color: var(--txc-1);
+  margin: 0.5em var(--pad-md) 0.5rem var(--pad-md);
 }
 
 p,
 ul,
 ol {
-  margin: 0.5em var(--pad);
-  color: var(--txc-light);
+  margin: 0.5em var(--pad-md);
+  color: var(--tx-2);
 }
 ul,
 ol {
   padding-left: 1.75em;
 }
+//?=========================================================================?//
+/*  FOOTER  */
+@import "_footer";
 
 //?=========================================================================?//
 /* MISC */
@@ -112,7 +123,7 @@ progress[value] {
   border: none;
   border-radius: 0.5rem;
   overflow: hidden;
-  background: var(--bdc);
+  background: var(--eg-1);
   --grad: linear-gradient(45deg, #fff, #000);
 
   &::-ms-fill {
@@ -150,6 +161,13 @@ progress[value] {
   }
 }
 
+.sr{
+  position: absolute;
+  height: 1px;
+  top: -9in;
+  color: transparent;
+}
+
 //? EXPERIMENTAL
 #cursor {
   position: absolute;
@@ -161,9 +179,6 @@ progress[value] {
   background-blend-mode: multiply;
 }
 
-img {
-  // animation: kenburns 20s infinite alternate;
-}
 @keyframes kenburns {
   0% {
     transform: scale(1);

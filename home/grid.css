@@ -1,0 +1,22 @@
+body{
+    display: grid;
+    grid-template-areas:
+          "header header header header"
+          ".      main   aside  .     "
+          "footer footer footer footer";
+        grid-template-columns: 1fr minmax(auto, 960px) minmax(auto, 320px) 1fr;
+        justify-content: center;
+        gap: 0.5rem;
+}
+body>header{
+    grid-area: header;
+}
+body>main{
+    grid-area: main;
+}
+body>aside{
+    grid-area: aside;
+}
+body>footer{
+    grid-area: footer;
+}

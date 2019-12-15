@@ -1,6 +1,10 @@
+$headerHeight: 2.5rem;
+
+
+
 body > header {
   position: relative;
-  background: var(--bdc);
+  background: var(--acc-1);
   z-index: 9;
   box-shadow: 0 .5em .5rem #0004;
   font-weight: bold;
@@ -8,7 +12,6 @@ body > header {
   ul {
     display: flex;
     flex-wrap: wrap;
-    // height: 3rem;
     list-style: none;
     margin: 0;
     padding: 0 1rem;
@@ -16,16 +19,17 @@ body > header {
   }
   li {
     display: inline-table;
-    height: 100%;
+    height: $headerHeight;
 
     >*{
       display: table-cell;
       vertical-align: middle;
+      height: 100%;
     }
   }
   a{
-    border-radius: var(--rad);
-    padding: .5rem;
+    border-radius: var(--rad-md);
+    padding: 0 .5rem;
     color: inherit;
     text-decoration: none;
 
