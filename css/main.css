@@ -1,27 +1,34 @@
 :root {
   /*  COLORS  */
-  --bg-1: #181820;
+  --bg-1: #141420;
   --bg-2: #0c0c10;
-  --eg-1: #222233;
-  --fg-1: #333344;
+  --bg-3: #333344;
+  --eg-1: #181820;
+  --eg-2: #181820;
+  --fg-1: #224488;
+  --fg-2: #333344;
+  --fg-3: #333344;
+  --fg-4: #333344;
+  --fg-5: #333344;
   --tx-1: #ffffff;
   --tx-2: #cccccc;
   --tx-3: #888888;
+  --tx-4: #ff8800;
+  --sh-1: 0 0 .5rem rgba(0,0,0,.5);
   /*  SIZES  */
-  --pad-md: 1rem;
-  --rad-md: .5rem;
+  --rad-md: 1rem;
 }
 
 [data-theme="light"] {
-  --bgc-1: #ddd;
-  --bgc-2: #fff;
-  --txc-1: #222;
-  --txc-2: #666;
-  --tx1: #222;
-  --tx2: #444;
-  --bdc-1: #ccc;
-  --nav: #fff;
-  --nav1: #000;
+  --bg-1: #ddd;
+  --bg-2: #fff;
+  --bg-3: # ;
+  --tx-1: #222;
+  --tx-2: #666;
+  --tx-3: #888;
+  --eg-1: #ccc;
+  --eg-2: #ccc;
+  --sh-1: 0 0 .25rem rgba(0,0,0,.1);
 }
 
 [data-theme="crazy"] {
@@ -34,12 +41,14 @@
 }
 
 [data-theme="black"] {
-  --bgc-1: #000;
-  --bgc-2: #000;
-  --fg1: #ccd;
-  --eg1: #c40;
-  --nav: #c40;
-  --nav1: #fff;
+  --bg-1: #000;
+  --bg-2: #000;
+  --tx-1: #fff;
+  --tx-2: #bbb;
+  --tx-3: #888;
+  --fg-1: #ccd;
+  --eg-1: transparent;
+  --eg-2: #222;
 }
 
 [data-theme="picture"] {
@@ -59,7 +68,7 @@ html {
   background: #181820;
   background: var(--bg-1);
   color: var(--tx-2);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 24px;
 }
 
@@ -70,7 +79,7 @@ body {
 /*  MAIN HEADER  */
 body > header {
   position: relative;
-  background: var(--acc-1);
+  background: var(--fg-1);
   z-index: 9;
   box-shadow: 0 .5em .5rem #0004;
   font-weight: bold;
@@ -121,19 +130,20 @@ article {
   margin: 0 auto;
   background: var(--bg-2);
   min-width: 240px;
-  max-width: 1280px;
+  max-width: 40rem;
   border-radius: var(--rad-md);
   border: 0.0625rem solid var(--eg-1);
+  box-shadow: var(--sh-1);
   overflow: hidden;
 }
 
 article + article {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 hr {
   border: none;
-  border-top: 1px solid var(--eg-1);
+  border-top: 0.0625rem solid var(--eg-2);
 }
 
 img,
@@ -168,24 +178,13 @@ h6 {
   font-size: 0.875em;
 }
 
-h1,
-h2 {
-  color: var(--txc-1);
-  margin: 0.5em var(--pad-md) 0.5rem var(--pad-md);
+h1, h2, h3, h4, h5, h6 {
+  color: var(--tx-1);
+  margin: 0.5em 1rem 0.25em 1rem;
 }
 
-h3,
-h4,
-h5,
-h6 {
-  color: var(--txc-1);
-  margin: 0.5em var(--pad-md) 0.5rem var(--pad-md);
-}
-
-p,
-ul,
-ol {
-  margin: 0.5em var(--pad-md);
+p, ul, ol, dl {
+  margin: 0.5em 1rem;
   color: var(--tx-2);
 }
 
@@ -227,13 +226,31 @@ progress[value]::-webkit-progress-value {
   background: #f80;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1920px) {
   html {
-    font-size: 2.60417vw;
+    font-size: 1.25vw;
   }
 }
 
-@media (max-width: 614px) {
+@media (max-width: 960px) {
+  html {
+    font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 3.333vw;
+  }
+}
+
+@media (max-width: 480px) {
   html {
     font-size: 16px;
   }
@@ -252,10 +269,7 @@ progress[value]::-webkit-progress-value {
 }
 
 .sr {
-  position: absolute;
-  height: 1px;
-  top: -9in;
-  color: transparent;
+  clip: rect(0, 0, 0, 0);
 }
 
 #cursor {
@@ -286,6 +300,5 @@ p {
   position: relative;
   top: 0;
   transform: translateZ(0.5in) scale(0.5);
-  filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25));
 }
 /*# sourceMappingURL=main.css.map */
