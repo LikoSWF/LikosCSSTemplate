@@ -3,66 +3,66 @@
   /*  COLORS  */ 
   --bg-1: #141420; // Background-1 base color
   --bg-2: #0c0c10; // Background-2 secondary color
-  --bg-3: #333344; // Background-3 stand out color
+  --bg-3: linear-gradient(#445,#334); // Background-3 stand out color
 
-  --eg-1: #181820; // Edge-1 outer-border color
-  --eg-2: #181820; // Edge-2 inner-border color
-  
+  --tx-1: #ffffff; // Text-level1 HEADING color
+  --tx-2: #cccccc; // Text-level2 BODY color
+  --tx-3: #aaa; // Text-level3 LIGHT color
+  --tx-4: #fff; // Text-level4 HILIGHT color
+
   --fg-1: #224488; // Corperate color-1
   --fg-2: #333344; // Corperate color-2
   --fg-3: #333344; // Corperate color-3
   --fg-4: #333344; // Corperate color-4
   --fg-5: #333344; // Corperate color-5
   
-  --tx-1: #ffffff; // Text-level1 HEADING color
-  --tx-2: #cccccc; // Text-level2 BODY color
-  --tx-3: #888888; // Text-level3 LIGHT color
-  --tx-4: #ff8800; // Text-level4 HILIGHT color
+  --eg-1: #181820; // Edge-1 outer-border color
+  --eg-2: #181820; // Edge-2 inner-border color
   
   --sh-1: 0 0 .5rem rgba(0,0,0,.5);
+  --sh-4: .25rem .25rem .25em rgba(0,0,0,.5);
 //=====================================================
   /*  SIZES  */
-  // --pad-md: 1rem;
-  --rad-md: 1rem;
+  --r-m: 1rem;
+  --pad: 1rem;
 }
 
 [data-theme="light"] {
-  --bg-1: #ddd; //* Background-1 base color
-  --bg-2: #fff; //* Background-2 secondary color
-  --bg-3: # ;
-  --tx-1: #222; //? Text-level1 HEADING color
-  --tx-2: #666; //? Text-level2 BODY color
-  --tx-3: #888; //? Text-level3 LIGHT color
+  --bg-1: #ddd; // Background-1 base color
+  --bg-2: #fff; // Background-2 secondary color
+  --bg-3: #fff; // Background-3 stand out color
+  
+  --tx-1: #222; // Text-level1 HEADING color
+  --tx-2: #666; // Text-level2 BODY color
+  --tx-3: #888; // Text-level3 LIGHT color
+  --tx-4: #fff; // Text-level4 HILIGHT color
+
   --eg-1: #ccc; // Edge-2 inner-border color
   --eg-2: #ccc; // Edge-2 inner-border color
 //=====================================================
   --sh-1: 0 0 .25rem rgba(0,0,0,.1);
 //=====================================================
 }
-
-[data-theme="crazy"] {
-  --bgc-1: #181820;
-  --bgc-2: #000;
-  --txc-1: var(--rgb-l);
-  --txc-2: #ccc;
-  --bdc-1: var(--rgb-d);
-  --acc-1: var(--rgb-l);
-}
 [data-theme="black"] {
-  --bg-1: #000;
+  --bg-1: #040404;
   --bg-2: #000;
-  --tx-1: #fff; //? Text-level1 HEADING color
-  --tx-2: #bbb; //? Text-level2 BODY color
-  --tx-3: #888; //? Text-level3 LIGHT color
+  --bg-3: #181820;
+  --tx-1: #fff; // Text-level1 HEADING color
+  --tx-2: #bbb; // Text-level2 BODY color
+  --tx-3: #888; // Text-level3 LIGHT color
+  --tx-4: #fff; // Text-level4 HILIGHT color
   --fg-1: #ccd;
-  --eg-1: transparent;
-  --eg-2: #222;
+  --eg-1: #181820;
+  --eg-2: #181820;
+  --sh-1: 0 0 1rem rgba(255,255,255,.03);
 }
-[data-theme="picture"] {
-  --bg1: url("https://unsplash.it/1920/1080");
-  --bg2: #000c;
-  --fg1: #ccd;
-  --eg1: #c40;
-  --nav: #c40;
-  --nav1: #fff;
+[data-theme="crazy"] {
+  --bg-1: #181820;
+  --bg-2: #000;
+  --bg-3: var(--rgb-l);
+  --tx-1: var(--rgb-l);
+  --tx-2: #ccc;
+  --tx-3: var(--rgb-d);
+  --eg-1: var(--rgb-d);
+  --tx-4: var(--rgb-l);
 }

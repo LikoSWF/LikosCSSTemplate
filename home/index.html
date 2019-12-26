@@ -1,284 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Home • LikoSWF</title>
+  <!-- SOCIAL TAGS -->
+  <meta property="og:image" content="https://picsum.photos/600/315" />
+  <meta property="og:url" content="http://liko.me" />
+  <meta property="og:title" content="Liko ShepWolFox's Art, Blog, Gallery" />
+  <meta property="og:description" name="description" content="Liko Shepwolfox's personal homepage. Come check out my Art, Work, Blog and more."
+  />
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@likoshepwolfox" />
+  <link rel="icon" href="/logo.min.svg" />
+  <link rel="stylesheet" href="/css/main.min.css" />
+  <!-- <link rel="stylesheet" href="grid.css" /> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap"/>
+</head>
 
-    <title>Home • LikoSWF</title>
-
-    <!-- SOCIAL TAGS -->
-    <meta
-      property="og:title"
-      content="Art • Blog • Gallery of Liko ShepWolFox"
-    />
-    <meta
-      property="og:description"
-      name="description"
-      content="Liko Shepwolfox's personal homepage. Come check out my Art, Work, Blog and more."
-    />
-    <meta property="og:image" content="https://picsum.photos/600/315" />
-    <meta property="og:url" content="http://liko.me" />
-
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@likoshepwolfox" />
-
-    <link rel="icon" href="/logo.min.svg" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <!-- <link rel="stylesheet" href="grid.css" /> -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap" rel="stylesheet">
-  </head>
-
-  <body>
-    <header>
-      <div style="max-width: 1200px;margin: 0 auto;">
-        <nav>
-          <ul>
-            <li>
-              <a href="">
-                <img
-                  style="width:1.5em;height:1.5em"
-                  src="/favicon.svg"
-                  alt="Logo"
-                />
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <svg
-                  style="width:1em;height:1em"
-                  width="24"
-                  height="24"
-                  viewbox="0 0 100 100"
-                >
-                  <g stroke="var(--tx-1)" stroke-width="12">
-                    <path d="M0,20 H100 M0,50 H100 M0,80 H100" />
-                  </g>
-                  Menu
-                </svg>
-              </a>
-            </li>
-            <li><a href="/">Main</a></li>
-            <li><a href="/">Link2</a></li>
-            <li>
-              <label
-                >Theme
-                <select name="theme" id="theme-select" onchange="changeTheme(this)">
-                  <option value="dark">Dark</option>
-                  <option value="light">Light</option>
-                  <option value="crazy">Crazy</option>
-                  <option value="black">Black</option>
-                  <option value="picture">Picture</option>
-                </select>
-              </label>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main>
-      <h1>Home</h1>
-      <article>
-        <h2>Hello World</h2>
-        <section>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-            necessitatibus ipsa similique, minus repellendus soluta ducimus
-            facilis incidunt minima tempora.
-          </p>
-          <p>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="">
             <img
-              class="plane1"
-              height="100"
-              src="https://picsum.photos/768/100"
-              alt=""
+              style="width:1.5em;height:1.5em"
+              src="/favicon.svg"
+              alt="Logo"
             />
-          </p>
-        </section>
-        <hr />
-        <section>
-          <h1>Heading 1</h1>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <h2>Heading 2</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <h3>Heading 3</h3>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <h4>Heading 4</h4>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <h5>Heading 5</h5>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <h6>Heading 6</h6>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </section>
-        <hr />
-        <section>
-          <ol style="column-count: 2;">
-            <style>
-              .tag {
-                color: #f80;
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <svg
+              style="width:1em;height:1em"
+              width="24"
+              height="24"
+              viewbox="0 0 100 100"
+            >
+              <g stroke="var(--tx-1, #000)" stroke-width="12">
+                <path d="M0,20 H100 M0,50 H100 M0,80 H100" />
+              </g>
+              Menu
+            </svg>
+          </a>
+        </li>
+        <li><a href="/">Main</a></li>
+        <li><a href="/">Link2</a></li>
+        <li>
+          <label>Theme
+            <select id="theme-select" onchange="changeTheme(this)">
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+              <option value="crazy">Crazy</option>
+              <option value="black">Black</option>
+            </select>
+          </label>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1 class="sr">Home</h1>
+    <article>
+      <h2>Hello World <time datetime="2019-12-26T17:05+08:00"></time></h2>
+      <section>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+          necessitatibus ipsa similique, minus repellendus soluta ducimus
+          facilis incidunt minima tempora.
+        </p>
+        <p>
+          <img
+            class="plane1"
+            height="100"
+            src="https://picsum.photos/960/100"
+            alt=""
+          />
+        </p>
+      </section>
+      <section>
+        <h1>Heading 1</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <h2>Heading 2</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <h3>Heading 3</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <h4>Heading 4</h4>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <h5>Heading 5</h5>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <h6>Heading 6</h6>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </section>
+      <section>
+        <ul style="column-count: 1;">
+          <style>
+            li > code {
+              color: #f40;
+            }
+          </style>
+          <li>This is <sub>subscript</sub> <code>&lt;sub&gt;</code></li>
+          <li>This is <sup>superscript</sup> <code>&lt;sup&gt;</code></li>
+          <li>This is <small>small text</small> <code>&lt;small&gt;</code></li>
+          <li>This is <strong>strong text</strong> <code>&lt;strong&gt;</code></li>
+          <li>This is <b>bold text</b> <code>&lt;b&gt;</code></li>
+          <li>This is <em>emphasized text</em> <code>&lt;em&gt;</code></li>
+          <li>This is <i>italic text</i> <code>&lt;i&gt;</code></li>
+          <li>This is an <abbr> abbreviation</abbr> <code>&lt;abbr&gt;</code></li>
+          <li>This is a <cite>Citation</cite> <code>&lt;cite&gt;</code></li>
+          <li>This is <del>deleted text</del> <code>&lt;del&gt;</code></li>
+          <li>This is <ins>inserted text</ins> <code>&lt;ins&gt;</code></li>
+          <li>This is <s>striked-through text</s> <code>&lt;s&gt;</code></li>
+          <li>This is <u>underlined text</u> <code>&lt;u&gt;</code></li>
+          <li>This is <mark>marked text</mark> <code>&lt;mark&gt;</code></li>
+          <li>This is <code>Some("Code");</code> <code>&lt;code&gt;</code></li>
+          <li>This is <samp>Output Sample</samp> <code>&lt;samp&gt;</code></li>
+          <li>This is <kbd>Keyboard Key</kbd> <code>&lt;kbd&gt;</code></li>
+          <li>This is a <var>Variable</var> <code>&lt;var&gt;</code></li>
+          <li>This is <q>quoted text</q> <code>&lt;q&gt;</code></li>
+          <li>The time is <time></time> <code>&lt;time&gt;</code></li>
+        </ul>
+        <dl>
+          <dt>description title</dt>
+          <dd>description description</dd>
+        </dl>
+      </section>
+    </article>
+    <article>
+      <section>
+        <p>
+          A meter: <meter value="6" min="0" max="10"></meter><br />
+          <lable> A progress bar: <progress value="6" max="10"></progress></lable>
+        </p>
+        <img src="../logo.min.svg" alt="" />
+        <!-- <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="-500 -500 1000 1000"
+          width="1000"
+          height="1000"
+        >
+          <style>
+            @keyframes spin {
+              0% {
+                transform: rotateY(0deg);
               }
-            </style>
-            <li>
-              This is <sub>subscript</sub> <code class="tag">&lt;sub&gt;</code>
-            </li>
-            <li>
-              This is <sup>superscript</sup>
-              <code class="tag">&lt;sup&gt;</code>
-            </li>
-            <li>
-              This is <small>small text</small>
-              <code class="tag">&lt;small&gt;</code>
-            </li>
-            <li>
-              This is <strong>strong text</strong>
-              <code class="tag">&lt;strong&gt;</code>
-            </li>
-            <li>This is <b>bold text</b> <code class="tag">&lt;b&gt;</code></li>
-            <li>
-              This is <em>emphasized text</em>
-              <code class="tag">&lt;em&gt;</code>
-            </li>
-            <li>
-              This is <i>italic text</i> <code class="tag">&lt;i&gt;</code>
-            </li>
-            <li>
-              This is an <abbr title="abbreviation"> abbreviation</abbr>
-              <code class="tag">&lt;abbr&gt;</code>
-            </li>
-            <li>
-              This is a <cite>Citation</cite>
-              <code class="tag">&lt;cite&gt;</code>
-            </li>
-            <li>
-              This is <del>deleted text</del>
-              <code class="tag">&lt;del&gt;</code>
-            </li>
-            <li>
-              This is <ins>inserted text</ins>
-              <code class="tag">&lt;ins&gt;</code>
-            </li>
-            <li>
-              This is <s>striked-through text</s>
-              <code class="tag">&lt;s&gt;</code>
-            </li>
-            <li>
-              This is <u>underlined text</u> <code class="tag">&lt;u&gt;</code>
-            </li>
-            <li>
-              This is <mark>marked text</mark>
-              <code class="tag">&lt;mark&gt;</code>
-            </li>
-            <li>
-              This is <code>Some("Code");</code>
-              <code class="tag">&lt;code&gt;</code>
-            </li>
-            <li>
-              This is <samp>Output Sample</samp>
-              <code class="tag">&lt;samp&gt;</code>
-            </li>
-            <li>
-              This is <kbd>Keyboard Key</kbd>
-              <code class="tag">&lt;kbd&gt;</code>
-            </li>
-            <li>
-              This is a <var>Variable</var> <code class="tag">&lt;var&gt;</code>
-            </li>
-            <li>
-              This is <q>quoted text</q> <code class="tag">&lt;q&gt;</code>
-            </li>
-            <li>
-              The time is <time></time> <code class="tag">&lt;time&gt;</code>
-            </li>
-          </ol>
-          <dl>
-            <dt>description title</dt>
-            <dd>description description</dd>
-          </dl>
-        </section>
-        <hr />
-        <section>
-          <p>
-            A meter: <meter value="6" min="0" max="10"></meter><br />
-            A progress bar: <progress value="6" max="10"></progress>
-          </p>
-          <img src="../logo.min.svg" alt="" />
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="-500 -500 1000 1000"
-            width="1000"
-            height="1000"
-          >
-            <style>
-              @keyframes spin {
-                0% {
-                  transform: rotateY(0deg);
-                }
-                20%,
-                to {
-                  transform: rotateY(180deg);
-                }
+              20%,
+              to {
+                transform: rotateY(180deg);
               }
-              @keyframes rotate {
-                0% {
-                  transform: rotateZ(0deg);
-                }
-                to {
-                  transform: rotateZ(180deg);
-                }
+            }
+            @keyframes rotate {
+              0% {
+                transform: rotateZ(0deg);
               }
-            </style>
-            <!-- <g stroke="#fff" stroke-width="0" fill="#f80" style="animation:rotate .5s infinite linear">
-              <circle cx="0" cy="0" r="495" fill="none" />
-              <path d="M-50-50  h 300 a 300 300 0 0 1 212.12 87.87 l-141.42 141.42 a 100 100 0 0 0-141.42 141.42l-141.42 141.42a300 300 0 01-87.87-212.12Z" />
-              <path d="M 50-150 v-200 a 200 200 0 0 1 200 200Z" />
-              <path d="M-50-350 h-200 a 200 200 0 0 0 200 200Z" />
-              <path d="M-350-50 v-200 a 200 200 0 0 1 200 200Z" />
-              <path d="M-150 50 h-200 a 200 200 0 0 0 200 200Z" />
-            </g> -->
-            <g style="perspective:99cm;">
-              <circle
-                cx="0"
-                cy="0"
-                r="480"
+              to {
+                transform: rotateZ(180deg);
+              }
+            }
+          </style>
+          <g stroke="#fff" stroke-width="0" fill="#f80" style="animation:rotate .5s infinite linear">
+            <circle cx="0" cy="0" r="495" fill="none" />
+            <path d="M-50-50  h 300 a 300 300 0 0 1 212.12 87.87 l-141.42 141.42 a 100 100 0 0 0-141.42 141.42l-141.42 141.42a300 300 0 01-87.87-212.12Z" />
+            <path d="M 50-150 v-200 a 200 200 0 0 1 200 200Z" />
+            <path d="M-50-350 h-200 a 200 200 0 0 0 200 200Z" />
+            <path d="M-350-50 v-200 a 200 200 0 0 1 200 200Z" />
+            <path d="M-150 50 h-200 a 200 200 0 0 0 200 200Z" />
+          </g>
+          <g style="perspective:99cm;">
+            <circle
+              cx="0"
+              cy="0"
+              r="480"
+              stroke="#f00"
+              stroke-width="30"
+              fill="#000"
+            />
+            <g style="animation:spin 10s infinite linear">
+              <g
                 stroke="#f00"
                 stroke-width="30"
-                fill="#000"
-              />
-              <g style="animation:spin 10s infinite linear">
-                <g
-                  stroke="#f00"
-                  stroke-width="30"
-                  fill="#fc0"
-                  transform="rotate(45 0 0)"
-                >
-                  <path
-                    d="M-30-30  h 280 a 300 300 0 0 1 183.86 67.87 l-113.16 113.16 a 122 122 0 0 0-169.7 169.7 l-113.16 113.16 a 300 300 0 01-67.87-183.86Z"
-                  />
-                  <path d="M 70-170 v-160 a 180 180 0 0 1 160 160Z" />
-                  <path d="M-70-330 h-160 a 180 180 0 0 0 160 160Z" />
-                  <path d="M-330-70 v-160 a 180 180 0 0 1 160 160Z" />
-                  <path d="M-170 70 h-160 a 180 180 0 0 0 160 160Z" />
-                </g>
+                fill="#fc0"
+                transform="rotate(45 0 0)"
+              >
+                <path
+                  d="M-30-30  h 280 a 300 300 0 0 1 183.86 67.87 l-113.16 113.16 a 122 122 0 0 0-169.7 169.7 l-113.16 113.16 a 300 300 0 01-67.87-183.86Z"
+                />
+                <path d="M 70-170 v-160 a 180 180 0 0 1 160 160Z" />
+                <path d="M-70-330 h-160 a 180 180 0 0 0 160 160Z" />
+                <path d="M-330-70 v-160 a 180 180 0 0 1 160 160Z" />
+                <path d="M-170 70 h-160 a 180 180 0 0 0 160 160Z" />
               </g>
             </g>
-          </svg>
-        </section>
-      </article>
-    </main>
-    <aside>
-      <article>
-        <p><time>12:30</time></p>
-      </article>
-      <article>
-        <!-- <img height="100" src="https://unsplash.it/768/100" alt=""> -->
-      </article>
-    </aside>
-    <footer>
-      <p>LikoSWF &copy; 2020</p>
-    </footer>
-    <script src="/js/script.js"></script>
-  </body>
+          </g>
+        </svg> -->
+      </section>
+    </article>
+  </main>
+  <aside>
+    <article>
+      <p><time>12:30</time></p>
+    </article>
+    <article>
+      <!-- <img height="100" src="https://unsplash.it/768/100" alt=""> -->
+    </article>
+  </aside>
+  <footer>
+    <p>LikoSWF &copy; 2020</p>
+  </footer>
+  <script src="/js/script.js"></script>
+</body>
 </html>

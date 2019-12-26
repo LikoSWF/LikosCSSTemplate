@@ -1,43 +1,42 @@
-$headerHeight: 2.5rem;
-
-
-
 body > header {
   position: relative;
-  background: var(--fg-1);
+  background: var(--bg-3);
   z-index: 9;
-  box-shadow: 0 .5em .5rem #0004;
+  box-shadow: var(--sh-1);
   font-weight: bold;
+  font-size: 1.25rem;
+  
 
   ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     margin: 0;
-    padding: 0 1rem;
-    
+    padding: 0 var(--pad);
   }
   li {
     display: inline-table;
-    height: $headerHeight;
+    height: 2.5rem;
 
     >*{
       display: table-cell;
       vertical-align: middle;
       height: 100%;
+      padding: 0 .5rem;
+      color: var(--tx-1);
+      filter: drop-shadow(var(--sh-4));
     }
   }
-  a{
-    border-radius: var(--rad-md);
-    padding: 0 .5rem;
-    color: inherit;
+  a{  
+    border-radius: var(--r-m);
     text-decoration: none;
+    color: var(--tx-1);
 
     &:visited{
-      color: inherit;
+      color: var(--tx-1);
     }
     &:hover, &:active, &:focus{
-      background: rgba(255,255,255,.15);
+      background: rgba(255,255,255,.2);
     }
   }
 }

@@ -2,62 +2,61 @@
   /*  COLORS  */
   --bg-1: #141420;
   --bg-2: #0c0c10;
-  --bg-3: #333344;
-  --eg-1: #181820;
-  --eg-2: #181820;
+  --bg-3: linear-gradient(#445,#334);
+  --tx-1: #ffffff;
+  --tx-2: #cccccc;
+  --tx-3: #aaa;
+  --tx-4: #fff;
   --fg-1: #224488;
   --fg-2: #333344;
   --fg-3: #333344;
   --fg-4: #333344;
   --fg-5: #333344;
-  --tx-1: #ffffff;
-  --tx-2: #cccccc;
-  --tx-3: #888888;
-  --tx-4: #ff8800;
+  --eg-1: #181820;
+  --eg-2: #181820;
   --sh-1: 0 0 .5rem rgba(0,0,0,.5);
+  --sh-4: .25rem .25rem .25em rgba(0,0,0,.5);
   /*  SIZES  */
-  --rad-md: 1rem;
+  --r-m: 1rem;
+  --pad: 1rem;
 }
 
 [data-theme="light"] {
   --bg-1: #ddd;
   --bg-2: #fff;
-  --bg-3: # ;
+  --bg-3: #fff;
   --tx-1: #222;
   --tx-2: #666;
   --tx-3: #888;
+  --tx-4: #fff;
   --eg-1: #ccc;
   --eg-2: #ccc;
   --sh-1: 0 0 .25rem rgba(0,0,0,.1);
 }
 
-[data-theme="crazy"] {
-  --bgc-1: #181820;
-  --bgc-2: #000;
-  --txc-1: var(--rgb-l);
-  --txc-2: #ccc;
-  --bdc-1: var(--rgb-d);
-  --acc-1: var(--rgb-l);
-}
-
 [data-theme="black"] {
-  --bg-1: #000;
+  --bg-1: #040404;
   --bg-2: #000;
+  --bg-3: #181820;
   --tx-1: #fff;
   --tx-2: #bbb;
   --tx-3: #888;
+  --tx-4: #fff;
   --fg-1: #ccd;
-  --eg-1: transparent;
-  --eg-2: #222;
+  --eg-1: #181820;
+  --eg-2: #181820;
+  --sh-1: 0 0 1rem rgba(255,255,255,.03);
 }
 
-[data-theme="picture"] {
-  --bg1: url("https://unsplash.it/1920/1080");
-  --bg2: #000c;
-  --fg1: #ccd;
-  --eg1: #c40;
-  --nav: #c40;
-  --nav1: #fff;
+[data-theme="crazy"] {
+  --bg-1: #181820;
+  --bg-2: #000;
+  --bg-3: var(--rgb-l);
+  --tx-1: var(--rgb-l);
+  --tx-2: #ccc;
+  --tx-3: var(--rgb-d);
+  --eg-1: var(--rgb-d);
+  --tx-4: var(--rgb-l);
 }
 
 * {
@@ -67,56 +66,13 @@
 html {
   background: #181820;
   background: var(--bg-1);
-  color: var(--tx-2);
+  color: var(--tx-1);
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 24px;
 }
 
 body {
   margin: 0 auto;
-}
-
-/*  MAIN HEADER  */
-body > header {
-  position: relative;
-  background: var(--fg-1);
-  z-index: 9;
-  box-shadow: 0 .5em .5rem #0004;
-  font-weight: bold;
-}
-
-body > header ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0 1rem;
-}
-
-body > header li {
-  display: inline-table;
-  height: 2.5rem;
-}
-
-body > header li > * {
-  display: table-cell;
-  vertical-align: middle;
-  height: 100%;
-}
-
-body > header a {
-  border-radius: var(--rad-md);
-  padding: 0 .5rem;
-  color: inherit;
-  text-decoration: none;
-}
-
-body > header a:visited {
-  color: inherit;
-}
-
-body > header a:hover, body > header a:active, body > header a:focus {
-  background: rgba(255, 255, 255, 0.15);
 }
 
 /*  DIVISIONS AND CONTAINERS  */
@@ -131,19 +87,26 @@ article {
   background: var(--bg-2);
   min-width: 240px;
   max-width: 40rem;
-  border-radius: var(--rad-md);
-  border: 0.0625rem solid var(--eg-1);
+  border-radius: var(--r-m);
+  border: 1px solid var(--eg-1);
   box-shadow: var(--sh-1);
   overflow: hidden;
+  transition: border-radius 1s, border 0s;
 }
 
 article + article {
   margin-top: 0.5rem;
 }
 
+section + section::before {
+  content: "";
+  border-top: 1px solid var(--eg-1);
+}
+
 hr {
   border: none;
-  border-top: 0.0625rem solid var(--eg-2);
+  border-top: 1px solid var(--eg-2);
+  margin: var(--pad) 0;
 }
 
 img,
@@ -151,52 +114,6 @@ svg {
   display: block;
   width: 100%;
   object-fit: cover;
-}
-
-/*  TEXT-STYLING AND PARAGRAPH-STYLING  */
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.75em;
-}
-
-h3 {
-  font-size: 1.5em;
-}
-
-h4 {
-  font-size: 1.25em;
-}
-
-h5 {
-  font-size: 1em;
-}
-
-h6 {
-  font-size: 0.875em;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--tx-1);
-  margin: 0.5em 1rem 0.25em 1rem;
-}
-
-p, ul, ol, dl {
-  margin: 0.5em 1rem;
-  color: var(--tx-2);
-}
-
-ul,
-ol {
-  padding-left: 1.75em;
-}
-
-/*  FOOTER  */
-body > footer {
-  background: var(--bdc-1);
-  text-align: center;
 }
 
 /* MISC */
@@ -226,50 +143,155 @@ progress[value]::-webkit-progress-value {
   background: #f80;
 }
 
+.sr {
+  position: absolute;
+  top: -99in;
+  height: 1px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.875em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--tx-1);
+  margin: 0.5em var(--pad) 0.25em var(--pad);
+}
+
+p, ul, ol, dl {
+  margin: 0.5em var(--pad);
+  color: var(--tx-2);
+}
+
+ul, ol {
+  padding-left: 1.75em;
+}
+
+dd {
+  margin-left: 1.75em;
+}
+
+time {
+  color: var(--tx-3);
+  font-size: .75rem;
+  font-weight: light;
+}
+
+body > header {
+  position: relative;
+  background: var(--bg-3);
+  z-index: 9;
+  box-shadow: var(--sh-1);
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+body > header ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--pad);
+}
+
+body > header li {
+  display: inline-table;
+  height: 2.5rem;
+}
+
+body > header li > * {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  padding: 0 .5rem;
+  color: var(--tx-1);
+  filter: drop-shadow(var(--sh-4));
+}
+
+body > header a {
+  border-radius: var(--r-m);
+  text-decoration: none;
+  color: var(--tx-1);
+}
+
+body > header a:visited {
+  color: var(--tx-1);
+}
+
+body > header a:hover, body > header a:active, body > header a:focus {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body > footer {
+  background: var(--bdc-1);
+  text-align: center;
+}
+
 @media (min-width: 1920px) {
-  html {
+  :root {
     font-size: 1.25vw;
   }
 }
 
 @media (max-width: 960px) {
-  html {
+  :root {
     font-size: 2.5vw;
+    --r-m: 0;
+  }
+  article {
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
   }
 }
 
 @media (max-width: 800px) {
-  html {
+  :root {
     font-size: 20px;
   }
 }
 
 @media (max-width: 600px) {
-  html {
+  :root {
     font-size: 3.333vw;
   }
 }
 
 @media (max-width: 480px) {
-  html {
+  :root {
     font-size: 16px;
   }
 }
 
 @media (max-width: 320px) {
-  html {
+  :root {
     font-size: 5vw;
   }
 }
 
 @media (max-width: 240px) {
-  html {
+  :root {
     font-size: 12px;
   }
-}
-
-.sr {
-  clip: rect(0, 0, 0, 0);
 }
 
 #cursor {
@@ -299,6 +321,5 @@ p {
 .plane1 {
   position: relative;
   top: 0;
-  transform: translateZ(0.5in) scale(0.5);
 }
 /*# sourceMappingURL=main.css.map */

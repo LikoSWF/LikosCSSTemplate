@@ -117,7 +117,7 @@ var emptyClocks = [];
 if (allClocks != null) {
   
   for (var i = 0; i < allClocks.length; i++) {
-    if (allClocks[i].innerHTML === "") {
+    if (allClocks[i].innerHTML === "" && allClocks[i].dateTime === "") {
       emptyClocks.push(allClocks[i]);
     }
   }
@@ -148,4 +148,10 @@ if (q.has("page")) {
 }
 if (q.has("id")) {
   console.log("query ID: " + q.get("id"));
+}
+
+// ISO8601 TIME PARSER
+var clocks = document.querySelectorAll("time[datetime]");
+for (var i = 0; i < clocks.length; i++){
+  clocks[i].innerHTML = new Date(clocks[i].dateTime).toLocaleDateString();
 }

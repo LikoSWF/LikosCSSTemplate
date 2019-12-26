@@ -1,11 +1,13 @@
 @import "_themes";
+
+
 * {
   box-sizing: border-box;
 }
 html {
   background: #181820;
   background: var(--bg-1);
-  color: var(--tx-2);
+  color: var(--tx-1);
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 24px;
 }
@@ -13,9 +15,7 @@ body {
   margin: 0 auto;
   // min-height: 100vh;
 }
-//?=========================================================================?//
-/*  MAIN HEADER  */
-@import "_header";
+
 
 //?=========================================================================?//
 /*  DIVISIONS AND CONTAINERS  */
@@ -29,19 +29,25 @@ article {
   background: var(--bg-2);
   min-width: 240px;
   max-width: 40rem;
-  border-radius: var(--rad-md);
-  border: 0.0625rem solid var(--eg-1);
+  border-radius: var(--r-m);
+  border: 1px solid var(--eg-1);
   box-shadow: var(--sh-1);
   overflow: hidden;
+  transition: border-radius 1s, border 0s;
 
   + article {
     margin-top: 0.5rem;
   }
 }
+section+section::before{
+  content: "";
+  border-top: 1px solid var(--eg-1);
+}
 
 hr {
   border: none;
-  border-top: 0.0625rem solid var(--eg-2);
+  border-top: 1px solid var(--eg-2);
+  margin: var(--pad) 0;
 }
 img,
 svg {
@@ -49,14 +55,8 @@ svg {
   width: 100%;
   object-fit: cover;
 }
-//?=========================================================================?//
-/*  TEXT-STYLING AND PARAGRAPH-STYLING  */
-@import "_textStyles";
-//?=========================================================================?//
-/*  FOOTER  */
-@import "_footer";
 
-//?=========================================================================?//
+
 /* MISC */
 
 progress[value] {
@@ -83,45 +83,19 @@ progress[value] {
   }
 }
 
-@media (min-width: 1920px) {
-  html {
-    font-size: 1.25vw;
-  }
-}
-@media (max-width: 960px) {
-  html {
-    font-size: 2.5vw;
-  }
-}
-@media (max-width: 800px) {
-  html {
-    font-size: 20px;
-  }
-}
-@media (max-width: 600px) {
-  html {
-    font-size: 3.333vw;
-  }
-}
-@media (max-width: 480px) {
-  html {
-    font-size: 16px;
-  }
-}
-@media (max-width: 320px) {
-  html {
-    font-size: 5vw;
-  }
-}
-@media (max-width: 240px) {
-  html {
-    font-size: 12px;
-  }
-}
+
 
 .sr {
-  clip: rect(0, 0, 0, 0);
+  position: absolute;
+  top: -99in;
+  height: 1px;
 }
+
+
+@import "_textStyles";
+@import "_header";
+@import "_footer";
+@import "_media";
 
 //? EXPERIMENTAL ===============================
 #cursor {
@@ -150,6 +124,5 @@ p {
 .plane1 {
   position: relative;
   top: 0;
-  transform: translateZ(0.5in) scale(0.5);
   // filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.25));
 }

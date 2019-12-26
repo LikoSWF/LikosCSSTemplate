@@ -7,14 +7,22 @@ h6 {font-size: 0.875em;}
 
 h1,h2,h3,h4,h5,h6 {
   color: var(--tx-1);
-  margin: 0.5em 1rem 0.25em 1rem;
+  margin: 0.5em var(--pad) 0.25em var(--pad);
 }
 
 p, ul, ol, dl {
-  margin: 0.5em 1rem;
+  margin: 0.5em var(--pad);
   color: var(--tx-2);
 }
-ul,
-ol {
+ul, ol{
   padding-left: 1.75em;
+}
+dd{
+  margin-left: 1.75em;
+}
+
+time{
+  color: var(--tx-3);
+  font-size: .75rem;
+  font-weight: light;
 }
